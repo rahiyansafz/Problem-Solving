@@ -369,7 +369,7 @@ Console.WriteLine(FractionsSum(7));  // 1.5117970521542
 Console.WriteLine(FractionsSum(10)); // 1.54976773116654
 Console.WriteLine("\n");
 
-//Sort array ascending
+//Sort Array Ascending
 
 //Given an array of integers, write a method that returns sorted array in ascending order.
 //Expected input and output
@@ -403,7 +403,7 @@ foreach (var s in sortedArr)
 }
 Console.WriteLine("\n");
 
-//The biggest number
+//The Biggest Number
 
 //Given an array of integers, write a method that returns the biggest number in this array.
 //Expected input and output
@@ -431,7 +431,7 @@ Console.WriteLine(TheBiggestNumber(new int[] { -34, -54, -7, -40, -123, -99 }));
 Console.WriteLine(TheBiggestNumber(new int[] { 1009, 998, 1090, 3000, 2934, 4888 }));  // 4888
 Console.WriteLine("\n");
 
-//Two 7s next to each other
+//Two 7s Next to Each Other
 
 //Given an array of positive digits, write a method that returns number of times that two 7's are next to each other in an array.
 //Expected input and output
@@ -458,7 +458,7 @@ Console.WriteLine(Two7sNextToEachOther(new int[] { 4, 7, 8, 2, 0, 5, 2, 7, 5, 8 
 Console.WriteLine(Two7sNextToEachOther(new int[] { 7, 7, 7, 0, 2, 6, 4, 8, 6, 5, 2, 7, 7 }));  // 3
 Console.WriteLine("\n");
 
-//Three increasing adjacent
+//Three Increasing Adjacent
 
 //Given an array of numbers, write a method that checks if there are three adjacent numbers where second is greater by 1 than the first one and third is greater by 1 than the second one.
 //Expected input and output
@@ -485,7 +485,7 @@ Console.WriteLine(ThreeIncreasingAdjacent(new int[] { -9, 0, -1, -6, -5, -4, -8,
 Console.WriteLine(ThreeIncreasingAdjacent(new int[] { 15, 17, 14, 11, 18, 19, 16, 16 }));     // False
 Console.WriteLine("\n");
 
-//Return even numbers
+//Return Even Numbers
 
 //Write a method that returns a string of even numbers greater than 0 and less than 100.
 //Expected input and output
@@ -550,7 +550,8 @@ for (int i = 0; i < arrayOfPrimes.Length; i++)
 }
 Console.WriteLine("\n");
 
-//Draw hourglass
+//Draw Hourglass
+
 //Write a method that draws hourglass shape like below.
 //Expected input and output
 //DrawHourglass() →
@@ -591,7 +592,7 @@ Console.WriteLine("Draw Hourglass: \n");
 DrawHourglass();
 Console.WriteLine("\n");
 
-//Draw parallelogram
+//Draw Parallelogram
 
 //Write a method that draws parallelogram shape like below.
 //Expected input and output
@@ -618,11 +619,11 @@ static void DrawParallelogram()
     }
 }
 
-Console.WriteLine("Draw parallelogram: \n");
+Console.WriteLine("Draw Parallelogram: \n");
 DrawParallelogram();
 Console.WriteLine("\n");
 
-//Draw Christmas tree
+//Draw Christmas Tree
 
 //Write a method that draws Christmas tree shape like below.
 //Expected input and output
@@ -667,7 +668,7 @@ Console.WriteLine("Draw Christmas Tree: \n");
 DrawChristmasTree();
 Console.WriteLine("\n");
 
-//Extract string
+//Extract String
 
 //Given a string, write a method that returns substring from between two double hash signs (#).
 //Expected input and output
@@ -698,7 +699,7 @@ static string ExtractString(string word)
     return string.Empty;
 }
 
-Console.WriteLine("Extract string: \n");
+Console.WriteLine("Extract String: \n");
 Console.WriteLine(ExtractString("kFp##jFoRj##pL")); // jFoRj
 Console.WriteLine(ExtractString("abc##def"));       // /empty string/
 Console.WriteLine(ExtractString("##123456789##"));  // 123456789
@@ -706,7 +707,7 @@ Console.WriteLine(ExtractString("no####thing"));    // /empty string/
 Console.WriteLine(ExtractString("empty"));          // /empty string/
 Console.WriteLine("\n");
 
-//Full sequence of letters
+//Full Sequence Of Letters
 
 //Given a string of two letters, where first one occurs before the second in the alphabet, write a method that returns full sequence of letters starting from first and ending at the second one.
 //Expected input and output
@@ -724,14 +725,14 @@ static string FullSequenceOfLetters(string word)
     return fullSequence;
 }
 
-Console.WriteLine("Full sequence of letters: \n");
+Console.WriteLine("Full Sequence Of Letters: \n");
 Console.WriteLine(FullSequenceOfLetters("bg")); // bcdefg
 Console.WriteLine(FullSequenceOfLetters("xy")); // xy            
 Console.WriteLine(FullSequenceOfLetters("az")); // abcdefghijklmnopqrstuvwxyz
 Console.WriteLine("\n");
 
 
-//Longest strictly increasing sequence
+//Longest Strictly Increasing Sequence
 
 //Given an array of integers, write a method that returns value of the longest strictly increasing sequence of numbers.
 //Expected input and output
@@ -764,14 +765,14 @@ static int LongestStrictlyIncreasingSequence(int[] array)
 }
 
 
-Console.WriteLine("Longest strictly increasing sequence: \n");
+Console.WriteLine("Longest Strictly Increasing Sequence: \n");
 Console.WriteLine(LongestStrictlyIncreasingSequence(new int[] { 4, 7, 2, 6, 4, 5, 6, 7, 8, 0, 7, 1, 2, 3 })); // 4
 Console.WriteLine(LongestStrictlyIncreasingSequence(new int[] { 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 })); // 1
 Console.WriteLine(LongestStrictlyIncreasingSequence(new int[] { 2, 3, 4, 5, 6, 7, 8 })); // 6
 Console.WriteLine(LongestStrictlyIncreasingSequence(new int[] { 1, 1, 1, 1, 1, })); // 0
 Console.WriteLine("\n");
 
-//Bits to number
+//Bits To Number
 
 //Write a method that takes non-empty string of bits as an argument and returns number as integer.
 //Expected input and output
@@ -789,13 +790,13 @@ static int BitsToNumber(string bits)
     return number;
 }
 
-Console.WriteLine("Bits to number: \n");
+Console.WriteLine("Bits To Number: \n");
 Console.WriteLine(BitsToNumber("0"));                   // 0
 Console.WriteLine(BitsToNumber("00001011000001"));      // 705
 Console.WriteLine(BitsToNumber("10001110001010100"));   // 72288
 Console.WriteLine("\n");
 
-//Digits sum
+//Digits Sum
 
 //Given a non-negative number, write a method that returns sum of its digits.
 //Expected input and output
@@ -1083,6 +1084,7 @@ Console.WriteLine(CheckBracketsSequence("((()(((()())))())())")); // True
 Console.WriteLine("\n");
 
 //Add Separator
+
 //Given a string and a separator, write a method that adds separator between each adjacent characters in a string.
 //Expected input and output
 //AddSeparator("ABCD", "^") → "A^B^C^D^"
@@ -1108,6 +1110,7 @@ Console.WriteLine(AddSeparator("octopus", "X"));   // oXcXtXoXpXuXs
 Console.WriteLine("\n");
 
 //Is Palindrome
+
 //Given a string, write a method that checks if it is a palindrome (is read the same backward as forward). Assume that string may consist only of lower-case letters.
 //Expected input and output
 //IsPalindrome("eye") → true
@@ -1160,6 +1163,7 @@ Console.WriteLine(LengthOfAString("conse12ctetur "));             //14
 Console.WriteLine("\n");
 
 //String In Reverse Order
+
 //Given a string, write a method that returns that string in reverse order.
 //Expected input and output
 //StringInReverseOrder("qwerty") → "ytrewq"
@@ -1183,6 +1187,7 @@ Console.WriteLine(StringInReverseOrder("malesuada"));  // adauselam
 Console.WriteLine("\n");
 
 //Sum Digits In String
+
 //Given a string, write a method which returns sum of all digits in that string. Assume that string contains only single digits.
 //Expected input and output
 //SumDigitsInString("1q2w3e") → 6
@@ -1211,6 +1216,7 @@ Console.WriteLine(SumDigitsInString("tt")); //0
 Console.WriteLine("\n");
 
 //Make Uppercase
+
 //Given a string, write a method that returns new string in which every odd letter of the word is uppercase. String may consist of one or more words.
 //Expected input and output
 //MakeUppercase("modem") → "MoDeM"
@@ -1250,6 +1256,7 @@ Console.WriteLine(MakeUppercase("Events And Delegates"));   // EvEnTs AnD DeLeGa
 Console.WriteLine("\n");
 
 //Mix Two Strings
+
 //Given two strings, write a method that returns one string made of two strings. First letter of new string is first letter of first string, second letter of new string is first letter of second string and so on.
 //Expected input and output
 //MixTwoStrings("aaa", "BBB") → "aBaBaB"
@@ -1280,6 +1287,7 @@ Console.WriteLine(MixTwoStrings("The tallest", "XXXXXXXXXX")); // TXhXeX XtXaXlX
 Console.WriteLine("\n");
 
 //Number Of Words
+
 //Given a string, write a method that counts its number of words. Assume there are no leading and trailing whitespaces and there is only single whitespace between two consecutive words.
 //Expected input and output
 //NumberOfWords("This is sample sentence") → 4
@@ -1303,6 +1311,7 @@ Console.WriteLine(NumberOfWords("Xor"));  // 1
 Console.WriteLine("\n");
 
 //Revert Words Order
+
 //Given a string, write a method that returns new string with reverted words order. Pay attention to the punctuation at the end of the sentence (period).
 //Expected input and output
 //RevertWordsOrder("John Doe.") → "Doe John."
@@ -1338,6 +1347,7 @@ Console.WriteLine(RevertWordsOrder("Cras iaculis tortor justo."));  // justo tor
 Console.WriteLine("\n");
 
 //How Many Occurrences
+
 //Given a string and substring, write a method that returns number of occurrences of substring in the string. Assume that both are case-sensitive. You may need to use library function here.
 //Expected input and output
 //HowManyOccurrences("do it now", "do") → 1
@@ -1368,6 +1378,7 @@ Console.WriteLine(HowManyOccurrences("xyz", "a"));  // 0
 Console.WriteLine("\n");
 
 //Sort Characters Descending
+
 //Given a string, write a method that returns array of chars (ASCII characters) sorted in descending order.
 //Expected input and output
 //SortCharactersDescending("onomatopoeia") → tpoooonmieaa
@@ -1400,6 +1411,7 @@ Console.WriteLine(SortCharactersDescending("Thi2 12  5@mpl3 Str!nG~"));  // ~trp
 Console.WriteLine("\n");
 
 //Compress String
+
 //Given a non-empty string, write a method that returns it in compressed format.
 //Expected input and output
 //CompressString("kkkktttrrrrrrrrrr") → "k4t3r10"
@@ -1434,4 +1446,170 @@ Console.WriteLine("Compress String: \n");
 Console.WriteLine(CompressString("aaaabbcccccdaa"));  //a4b2c5d1a2
 Console.WriteLine(CompressString("948kro"));  //914181k1r1o1
 Console.WriteLine(CompressString("$999j*#jjjfYyyy"));  //$193j1*1#1j3f1Y1y3
+Console.WriteLine("\n");
+
+//Recursion
+
+//Digits Multiplication
+//Given a positive integer, write a method that returns multiplication of all digits in the number.
+//Expected input and output
+//DigitsMultiplication(456) → 120
+//DigitsMultiplication(123) → 6
+
+static int DigitsMultiplication(int num) => num > 10 ? num % 10 * DigitsMultiplication(num / 10) : num % 10;
+
+Console.WriteLine("Digits Multiplication: \n");
+Console.WriteLine(DigitsMultiplication(1234));       // 24
+Console.WriteLine(DigitsMultiplication(94632));      // 1296
+Console.WriteLine(DigitsMultiplication(222222222));  // 512
+Console.WriteLine("\n");
+
+//Factorial
+
+//Given a non-negative integer, write a method that returns factorial of a number.
+//Expected input and output
+//Factorial(4) → 24
+//Factorial(7) → 5040
+
+static long Factorial(int num) => num == 0 || num == 1 ? 1 : num * Factorial(num - 1);
+
+Console.WriteLine("Factorial: \n");
+Console.WriteLine(Factorial(5));  // 120
+Console.WriteLine(Factorial(1));  // 1
+Console.WriteLine(Factorial(14)); // 87178291200
+Console.WriteLine(Factorial(0));  // 1
+Console.WriteLine(Factorial(20)); // 2432902008176640000
+Console.WriteLine("\n");
+
+//Fibonacci Number
+
+//Given a non-negative integer, write a method that returns n-th element of Fibonacci sequence.
+//Expected input and output
+//FibonacciNumber(3) → 2
+//FibonacciNumber(7) → 13
+
+static int FibonacciNumber(int num) => num <= 1 ? num : FibonacciNumber(num - 2) + FibonacciNumber(num - 1);
+
+Console.WriteLine("Fibonacci Number: \n");
+Console.WriteLine(FibonacciNumber(10));  // 55
+Console.WriteLine(FibonacciNumber(0));   // 0
+Console.WriteLine(FibonacciNumber(20));  // 6765
+Console.WriteLine(FibonacciNumber(13));  // 233
+Console.WriteLine("\n");
+
+//Numbers Multiplication
+
+//Given two integers a and b (a <= b) as range, write a method that returns multiplication of numbers from given range.
+//Expected input and output
+//NumbersMultiplication(5, 7) → 210
+//NumbersMultiplication(50, 50) → 50
+
+static int NumbersMultiplication(int from, int to)
+{
+    while (from == to)
+    {
+        return from;
+    }
+
+    return from * NumbersMultiplication(from + 1, to);
+}
+
+Console.WriteLine("Numbers Multiplication: \n");
+Console.WriteLine($"{NumbersMultiplication(1, 5)}");     // 120
+Console.WriteLine($"{NumbersMultiplication(-27, -22)}"); // 213127200
+Console.WriteLine($"{NumbersMultiplication(44, 44)}");   // 44  
+Console.WriteLine("\n");
+
+//To The Power Of (Recursion)
+
+//Given two integers, write a method that returns first number raised to the power of second number.
+//Expected input and output
+//ToThePowerOfRecursion(2, 3) → 8
+//ToThePowerOfRecursion(5, 2) → 25
+
+static int ToThePowerOfRecursion(int b, int exp) => exp == 0 ? 1 : exp > 1 ? b * ToThePowerOfRecursion(b, exp - 1) : b;
+
+Console.WriteLine("To The Power Of (Recursion): \n");
+Console.WriteLine(ToThePowerOfRecursion(10, 0)); // 1
+Console.WriteLine(ToThePowerOfRecursion(3, 7));  // 2187
+Console.WriteLine(ToThePowerOfRecursion(2, 10)); // 1024
+Console.WriteLine("\n");
+
+//String In Reverse Order(Recursion)
+
+//Given a string, write a method that prints it in reverse order.
+//Expected input and output
+//StringInReverseOrderRecursion("abcde") → "edcba"
+//StringInReverseOrderRecursion("Sed lectus est, elementum ut urna eu") → "ue anru tu mutnemele ,tse sutcel deS"
+
+static string StringInReverseOrderRecursion(string str) => str.Length > 0 ? str[str.Length - 1] + StringInReverseOrderRecursion(str.Substring(0, str.Length - 1)) : str;
+
+Console.WriteLine("String In Reverse Order(Recursion): \n");
+var str1 = "A";
+var str2 = "34 ( 9  9@*";
+var str3 = "eMpIrE";
+var str4 = string.Empty;
+
+Console.WriteLine(StringInReverseOrderRecursion(str1)); // A
+Console.WriteLine(StringInReverseOrderRecursion(str2)); // *@9  9 ( 43
+Console.WriteLine(StringInReverseOrderRecursion(str3)); // ErIpMe
+Console.WriteLine(StringInReverseOrderRecursion(str4)); //
+Console.WriteLine("\n");
+
+//Is Palindrome(Recursion)
+
+//Given a string, write a method that checks if it is a palindrome. String length may be >= 0.
+//Expected input and output
+//IsPalindromeRecursion("xx") → true
+//IsPalindromeRecursion("pendrive") → false
+
+static bool IsPalindromeRecursion(string str)
+{
+    if (str.Length == 1 || (str.Length == 2 && str[0] == str[1]))
+    {
+        return true;
+    }
+    else if (str.Length > 1)
+    {
+        if (str[0] != str[str.Length - 1])
+        {
+            return false;
+        }
+
+        return IsPalindromeRecursion(str.Substring(1, str.Length - 2));
+    }
+
+    return false;
+}
+
+Console.WriteLine("Is Palindrome(Recursion): \n");
+Console.WriteLine(IsPalindromeRecursion("aa"));        // True
+Console.WriteLine(IsPalindromeRecursion("dad"));       // True
+Console.WriteLine(IsPalindromeRecursion("apple"));     // False
+Console.WriteLine(IsPalindromeRecursion("deleveled")); // True
+Console.WriteLine(IsPalindromeRecursion(""));          // False
+Console.WriteLine(IsPalindromeRecursion("hannah"));    // True
+Console.WriteLine(IsPalindromeRecursion("X"));         // True
+Console.WriteLine("\n");
+
+//Minimum Element
+//Given an array of integers and array's length, write a method that returns its minimum element.
+//Expected input and output
+//MinimumElement([8, 5, 9], 3) → 5
+//MinimumElement([-2, -9, 2, -3, 1, 0], 6) → -9
+
+static int MinimumElement(int[] arr, int size)
+{
+    if (size == 1)
+    {
+        return arr[0];
+    }
+
+    return arr[size - 1] < MinimumElement(arr, size - 1) ? arr[size - 1] : MinimumElement(arr, size - 1);
+}
+
+Console.WriteLine("Minimum Element: \n");
+Console.WriteLine(MinimumElement(new int[] { 7, 2, 9, 5, 4 }, 5));                  // 2
+Console.WriteLine(MinimumElement(new int[] { -45, -6, 39, 96, -20, 0, -100 }, 7));  // -100
+Console.WriteLine(MinimumElement(new int[] { 830, 905, 999, 831, 920, 900 }, 6));   // 830
 Console.WriteLine("\n");
