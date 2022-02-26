@@ -1054,4 +1054,3 @@ Console.WriteLine(DigitalRoot(1029584739)); // 3
 Console.WriteLine(DigitalRoot(99999999));   // 9
 
 Console.WriteLine("\n");
-
