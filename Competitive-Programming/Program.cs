@@ -1053,3 +1053,108 @@ Console.WriteLine(DigitalRoot(5));          // 5
 Console.WriteLine(DigitalRoot(1029584739)); // 3
 Console.WriteLine(DigitalRoot(99999999));   // 9
 Console.WriteLine("\n");
+
+//Check Brackets Sequence
+
+//Given a sequence of brackets, write a method that checks if it has the same number of opening and closing brackets.
+//Expected input and output
+//CheckBracketsSequence("((()))") → true
+//CheckBracketsSequence("()(())(") → false
+//CheckBracketsSequence(")") → false
+
+static bool CheckBracketsSequence(string sequence)
+{
+    int check = 0;
+
+    for (int i = 0; i < sequence.Length; i++)
+    {
+        check = sequence[i] == '(' ? ++check : --check;
+    }
+
+    return check == 0;
+}
+
+Console.WriteLine("Check Brackets Sequence: \n");
+Console.WriteLine(CheckBracketsSequence("((()()()))"));           // True
+Console.WriteLine(CheckBracketsSequence(")"));                    // False
+Console.WriteLine(CheckBracketsSequence(")(())("));               // True
+Console.WriteLine(CheckBracketsSequence("()())()"));              // False
+Console.WriteLine(CheckBracketsSequence("((()(((()())))())())")); // True
+Console.WriteLine("\n");
+
+//Add Separator
+//Given a string and a separator, write a method that adds separator between each adjacent characters in a string.
+//Expected input and output
+//AddSeparator("ABCD", "^") → "A^B^C^D^"
+//AddSeparator("chocolate", "-") → "c-h-o-c-o-l-a-t-e"
+
+static string AddSeparator(string word, string separator)
+{
+    string separatedWord = string.Empty;
+
+    for (int i = 0; i < word.Length; i++)
+    {
+        separatedWord += i < word.Length - 1 ? word[i] + separator : word[i].ToString();
+    }
+
+    return separatedWord;
+}
+
+Console.WriteLine("Add Separator: \n");
+Console.WriteLine(AddSeparator("computer", "_"));  // c_o_m_p_u_t_e_r
+Console.WriteLine(AddSeparator("$*(#", " "));       // $ * ( #
+Console.WriteLine(AddSeparator("AC", "B"));        // ABC
+Console.WriteLine(AddSeparator("octopus", "X"));   // oXcXtXoXpXuXs
+Console.WriteLine("\n");
+
+//Is Palindrome
+//Given a string, write a method that checks if it is a palindrome (is read the same backward as forward). Assume that string may consist only of lower-case letters.
+//Expected input and output
+//IsPalindrome("eye") → true
+//IsPalindrome("home") → false
+
+static bool IsPalindrome(string str)
+{
+    for (int i = 0; i < str.Length / 2; i++)
+    {
+        if (str[i] != str[str.Length - 1 - i])
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+Console.WriteLine("Is Palindrome: \n");
+Console.WriteLine(IsPalindrome("madam"));  // True
+Console.WriteLine(IsPalindrome("123454321"));  // True
+Console.WriteLine(IsPalindrome("apple"));  // False
+Console.WriteLine(IsPalindrome("Never Odd Or Even"));  // True
+Console.WriteLine(IsPalindrome("Curabitur vel est diam"));  // False
+Console.WriteLine(IsPalindrome("x"));  // True
+Console.WriteLine("\n");
+
+//Length Of String
+
+//Given a string, write a method that returns its length. Do not use library methods!
+//Expected input and output
+//LengthOfAString("computer") → 8
+//LengthOfAString("ice cream") → 9
+
+static int LengthOfAString(string str)
+{
+    int length = 0;
+    foreach (char c in str)
+    {
+        length++;
+    }
+
+    return length;
+}
+
+Console.WriteLine("Length Of String: \n");
+Console.WriteLine(LengthOfAString("Lorem ipsum dolor sit amet")); //26
+Console.WriteLine(LengthOfAString(string.Empty));                 //0
+Console.WriteLine(LengthOfAString("conse12ctetur "));             //14
+Console.WriteLine("\n");
