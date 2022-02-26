@@ -825,7 +825,7 @@ Console.WriteLine(DigitsSum(1029584739)); // 48
 Console.WriteLine(DigitsSum(99999999));    // 72
 Console.WriteLine("\n");
 
-//Sum and average
+//Sum And Average
 
 //Given two integers n and m (n <= m), write a method that returns sum of all integers and average from range [n, m].
 //Expected input and output
@@ -847,13 +847,13 @@ static string SumAndAverage(int lowest, int highest)
     return string.Format($"Sum: {sum}, Average: {average}");
 }
 
-Console.WriteLine("Sum and Average: \n");
+Console.WriteLine("Sum And Average: \n");
 Console.WriteLine(SumAndAverage(20, 21)); // Sum: 41 Average: 20,5
 Console.WriteLine(SumAndAverage(55, 55)); // Sum: 55 Average: 55
 Console.WriteLine(SumAndAverage(0, 100)); // Sum: 5050 Average: 50
 Console.WriteLine("\n");
 
-//Sum double only
+//Sum Double Only
 
 //Given an array of objects, write a method that returns sum of objects of double type.
 //Expected input and output
@@ -877,7 +877,7 @@ Console.WriteLine("Sum Double Only: \n");
 Console.WriteLine(SumDoubleOnly(new object[] { 8.9, "dog", 6, 'c', 15.99, 745, true })); // 24.89
 Console.WriteLine("\n");
 
-//Draw triangle
+//Draw Triangle
 
 //Write a method that draws triangle shape like below.
 //Expected input and output
@@ -1052,5 +1052,4 @@ Console.WriteLine("Digital Root: \n");
 Console.WriteLine(DigitalRoot(5));          // 5
 Console.WriteLine(DigitalRoot(1029584739)); // 3
 Console.WriteLine(DigitalRoot(99999999));   // 9
-
 Console.WriteLine("\n");
