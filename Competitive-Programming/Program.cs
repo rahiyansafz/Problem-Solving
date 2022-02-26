@@ -1158,3 +1158,280 @@ Console.WriteLine(LengthOfAString("Lorem ipsum dolor sit amet")); //26
 Console.WriteLine(LengthOfAString(string.Empty));                 //0
 Console.WriteLine(LengthOfAString("conse12ctetur "));             //14
 Console.WriteLine("\n");
+
+//String In Reverse Order
+//Given a string, write a method that returns that string in reverse order.
+//Expected input and output
+//StringInReverseOrder("qwerty") → "ytrewq"
+//StringInReverseOrder("oe93 kr") → "rk 39eo"
+
+static string StringInReverseOrder(string str)
+{
+    string reverseString = string.Empty;
+    for (int i = str.Length - 1; i >= 0; i--)
+    {
+        reverseString += str[i];
+    }
+
+    return reverseString;
+}
+
+Console.WriteLine("String In Reverse Order: \n");
+Console.WriteLine(StringInReverseOrder("Vivamus commodo quam at purus "));  //  surup ta mauq odommoc sumaviV
+Console.WriteLine(StringInReverseOrder("34 ( 9  9@*"));  // *@9  9 ( 43
+Console.WriteLine(StringInReverseOrder("malesuada"));  // adauselam
+Console.WriteLine("\n");
+
+//Sum Digits In String
+//Given a string, write a method which returns sum of all digits in that string. Assume that string contains only single digits.
+//Expected input and output
+//SumDigitsInString("1q2w3e") → 6
+//SumDigitsInString("L0r3m.1p5um") → 9
+//SumDigitsInString("") → 0
+
+static int SumDigitsInString(string str)
+{
+    var sum = 0;
+
+    for (var i = 0; i < str.Length; i++)
+    {
+        if (char.IsDigit(str[i]))
+        {
+            sum += (int)char.GetNumericValue(str[i]);
+        }
+    }
+
+    return sum;
+}
+
+Console.WriteLine("Sum Digits In String: \n");
+Console.WriteLine(SumDigitsInString("aaa5aa5aa5a5a")); // 20
+Console.WriteLine(SumDigitsInString("10r3m1p5um")); // 10
+Console.WriteLine(SumDigitsInString("tt")); //0
+Console.WriteLine("\n");
+
+//Make Uppercase
+//Given a string, write a method that returns new string in which every odd letter of the word is uppercase. String may consist of one or more words.
+//Expected input and output
+//MakeUppercase("modem") → "MoDeM"
+//MakeUppercase("BookWorm") → "BoOkWoRm"
+//MakeUppercase("Aliquam dolor nisl?") → "AlIqUaM DoLoR NiSl?"
+
+static string MakeUppercase(string word)
+{
+    int letterIndex = 0;
+    string uppercaseWord = string.Empty;
+
+    for (int i = 0; i < word.Length; i++)
+    {
+        if (word[i] >= 'a' && word[i] <= 'z' && letterIndex % 2 == 0)
+        {
+            letterIndex++;
+            uppercaseWord += (char)(word[i] - 32);
+        }
+        else if (word[i] != ' ')
+        {
+            letterIndex++;
+            uppercaseWord += word[i];
+        }
+        else
+        {
+            letterIndex = 0;
+            uppercaseWord += word[i];
+        }
+    }
+    return uppercaseWord;
+}
+
+Console.WriteLine("Make Uppercase: \n");
+Console.WriteLine(MakeUppercase("very short sentence."));   // VeRy ShOrT SeNtEnCe.
+Console.WriteLine(MakeUppercase("motorcycle"));             // MoToRcYcLe
+Console.WriteLine(MakeUppercase("Events And Delegates"));   // EvEnTs AnD DeLeGaTeS
+Console.WriteLine("\n");
+
+//Mix Two Strings
+//Given two strings, write a method that returns one string made of two strings. First letter of new string is first letter of first string, second letter of new string is first letter of second string and so on.
+//Expected input and output
+//MixTwoStrings("aaa", "BBB") → "aBaBaB"
+//MixTwoStrings("good one", "111") → "g1o1o1d one"
+
+static string MixTwoStrings(string word1, string word2)
+{
+    string mixedWord = string.Empty;
+
+    for (int i = 0; i < (word1.Length > word2.Length ? word1.Length : word2.Length); i++)
+    {
+        if (i < word1.Length)
+        {
+            mixedWord += word1[i];
+        }
+        if (i < word2.Length)
+        {
+            mixedWord += word2[i];
+        }
+    }
+
+    return mixedWord;
+}
+
+Console.WriteLine("Mix Two Strings: \n");
+Console.WriteLine(MixTwoStrings("DoG", "ElEpHaNt"));           // DEolGEpHaNt
+Console.WriteLine(MixTwoStrings("The tallest", "XXXXXXXXXX")); // TXhXeX XtXaXlXlXeXsXt
+Console.WriteLine("\n");
+
+//Number Of Words
+//Given a string, write a method that counts its number of words. Assume there are no leading and trailing whitespaces and there is only single whitespace between two consecutive words.
+//Expected input and output
+//NumberOfWords("This is sample sentence") → 4
+//NumberOfWords("OK") → 1
+
+static int NumberOfWords(string str)
+{
+    int numberOfWords = 0;
+    for (int i = 1; i < str.Length; i++)
+    {
+        numberOfWords = (char.IsWhiteSpace(str[i]) ? numberOfWords + 1 : numberOfWords);
+    }
+
+    return numberOfWords + 1;
+}
+
+Console.WriteLine("Number Of Words: \n");
+Console.WriteLine(NumberOfWords("Mauris consectetur urna sit amet risus ultricies rutrum."));  // 8
+Console.WriteLine(NumberOfWords("Quisque M"));  // 2
+Console.WriteLine(NumberOfWords("Xor"));  // 1
+Console.WriteLine("\n");
+
+//Revert Words Order
+//Given a string, write a method that returns new string with reverted words order. Pay attention to the punctuation at the end of the sentence (period).
+//Expected input and output
+//RevertWordsOrder("John Doe.") → "Doe John."
+//RevertWordsOrder("A, B. C") → "C B. A,"
+
+static string RevertWordsOrder(string str)
+{
+    string[] strArray = str.Split(' ');
+    int len = strArray.Length;
+
+    for (int i = 0; i < len / 2; i++)
+    {
+        string temp = strArray[i];
+
+        if (i == 0)
+        {
+            strArray[i] = strArray[len - 1].Remove(strArray[len - 1].Length - 1);
+            strArray[len - 1] = temp + strArray[len - 1].Substring(strArray[len - 1].Length - 1);
+        }
+        else
+        {
+            strArray[i] = strArray[len - 1 - i];
+            strArray[len - 1 - i] = temp;
+        }
+    }
+
+    return string.Join(" ", strArray);
+}
+
+Console.WriteLine("Revert Words Order: \n");
+Console.WriteLine(RevertWordsOrder("Proin in odio viverra, accumsan purus vel, placerat elit!"));  // elit placerat vel, purus accumsan viverra, odio in Proin!
+Console.WriteLine(RevertWordsOrder("Cras iaculis tortor justo."));  // justo tortor iaculis Cras.
+Console.WriteLine("\n");
+
+//How Many Occurrences
+//Given a string and substring, write a method that returns number of occurrences of substring in the string. Assume that both are case-sensitive. You may need to use library function here.
+//Expected input and output
+//HowManyOccurrences("do it now", "do") → 1
+//HowManyOccurrences("empty", "d") → 0
+
+static int HowManyOccurrences(string str, string subStr)
+{
+    int found;
+    int total = 0;
+    for (int i = 0; i < str.Length; i++)
+    {
+        found = str.IndexOf(subStr, i);
+
+        if (found > -1)
+        {
+            total++;
+            i = found;
+        }
+    }
+
+    return total;
+}
+
+Console.WriteLine("How Many Occurrences: \n");
+Console.WriteLine(HowManyOccurrences("He is a good boy, he would never do that!", "he"));  // 1
+Console.WriteLine(HowManyOccurrences("104 593 00-930 720193", "93"));  // 3
+Console.WriteLine(HowManyOccurrences("xyz", "a"));  // 0
+Console.WriteLine("\n");
+
+//Sort Characters Descending
+//Given a string, write a method that returns array of chars (ASCII characters) sorted in descending order.
+//Expected input and output
+//SortCharactersDescending("onomatopoeia") → tpoooonmieaa
+//SortCharactersDescending("fohjwf42os") → wsoojhff42
+
+static char[] SortCharactersDescending(string str)
+{
+    char[] charArray = str.ToCharArray();
+    char ch;
+
+    for (int i = 1; i < str.Length; i++)
+    {
+        for (int j = 0; j < str.Length - 1; j++)
+        {
+            if (charArray[j] < charArray[j + 1])
+            {
+                ch = charArray[j];
+                charArray[j] = charArray[j + 1];
+                charArray[j + 1] = ch;
+            }
+        }
+    }
+
+    return charArray;
+}
+
+Console.WriteLine("Sort Characters Descending: \n");
+Console.WriteLine(SortCharactersDescending("Aliquam pulvinar aliquam libero, in fringilla erat."));  // vuuutrrrrqqponnnmmlllllliiiiiiigfeebaaaaaaA.,            
+Console.WriteLine(SortCharactersDescending("Thi2 12  5@mpl3 Str!nG~"));  // ~trpnmlihTSG@53221!
+Console.WriteLine("\n");
+
+//Compress String
+//Given a non-empty string, write a method that returns it in compressed format.
+//Expected input and output
+//CompressString("kkkktttrrrrrrrrrr") → "k4t3r10"
+//CompressString("p555ppp7www") → "p153p371w3"
+
+static string CompressString(string str)
+{
+    var count = 0;
+    var last = str[0];
+    var newStr = string.Empty;
+
+    foreach (var s in str)
+    {
+        if (s == last)
+        {
+            count++;
+        }
+        else
+        {
+            newStr += last.ToString() + count;
+            last = s;
+            count = 1;
+        }
+    }
+
+    newStr += last.ToString() + count;
+
+    return newStr;
+}
+
+Console.WriteLine("Compress String: \n");
+Console.WriteLine(CompressString("aaaabbcccccdaa"));  //a4b2c5d1a2
+Console.WriteLine(CompressString("948kro"));  //914181k1r1o1
+Console.WriteLine(CompressString("$999j*#jjjfYyyy"));  //$193j1*1#1j3f1Y1y3
+Console.WriteLine("\n");
