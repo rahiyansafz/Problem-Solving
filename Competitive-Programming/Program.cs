@@ -27,17 +27,7 @@ static string ElementaryOperations(int a, int b)
     int addition = a + b;
     int substraction = a - b;
     int multiplication = a * b;
-    double division;
-
-    if (b != 0)
-    {
-        division = a / (double)b;
-    }
-    else // assume that division by 0 returns 0
-    {
-        division = 0;
-    }
-
+    double division = b != 0 ? a / (double)b : 0;
     return String.Format($"a + b = {addition}, a - b = {substraction}, a * b = {multiplication}, a / b = {division}");
 }
 
@@ -1613,3 +1603,42 @@ Console.WriteLine(MinimumElement(new int[] { 7, 2, 9, 5, 4 }, 5));              
 Console.WriteLine(MinimumElement(new int[] { -45, -6, 39, 96, -20, 0, -100 }, 7));  // -100
 Console.WriteLine(MinimumElement(new int[] { 830, 905, 999, 831, 920, 900 }, 6));   // 830
 Console.WriteLine("\n");
+
+
+//CODE KATA { CodeWars }
+
+//## Count the number of Duplicates =>
+
+//Solution => 
+
+//using System;
+//using System.Linq;
+static int duplicatecount(string str)
+{
+    Console.WriteLine("Kata Count the number of Duplicates: \n");
+    return str.ToLower().GroupBy(x => x).Select(y => y).Where(z => z.Count() > 1).Count();
+}
+Console.WriteLine(duplicatecount("AAABBcasd"));
+
+
+//Sample Tests => 
+//using System;
+//using System.Text.RegularExpressions;
+//using System.Collections.Generic;
+//using System.Linq;
+//using NUnit.Framework;
+
+//[TestFixture]
+//public class KataTest
+//{
+//    [Test]
+//    public void KataTests()
+//    {
+//        Assert.AreEqual(0, Kata.DuplicateCount(""));
+//        Assert.AreEqual(0, Kata.DuplicateCount("abcde"));
+//        Assert.AreEqual(2, Kata.DuplicateCount("aabbcde"));
+//        Assert.AreEqual(2, Kata.DuplicateCount("aabBcde"), "should ignore case");
+//        Assert.AreEqual(1, Kata.DuplicateCount("Indivisibility"));
+//        Assert.AreEqual(2, Kata.DuplicateCount("Indivisibilities"), "characters may not be adjacent");
+//    }
+//}
