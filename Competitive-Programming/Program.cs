@@ -1615,10 +1615,11 @@ Console.WriteLine("\n");
 //using System.Linq;
 static int duplicatecount(string str)
 {
-    Console.WriteLine("Kata Count the number of Duplicates: \n");
     return str.ToLower().GroupBy(x => x).Select(y => y).Where(z => z.Count() > 1).Count();
 }
+Console.WriteLine("Kata Count the number of Duplicates: \n");
 Console.WriteLine(duplicatecount("AAABBcasd"));
+Console.WriteLine("\n");
 
 
 //Sample Tests => 
