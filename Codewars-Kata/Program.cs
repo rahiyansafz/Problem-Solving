@@ -106,3 +106,22 @@ Console.WriteLine(GetSum(-1, 2));
 Console.WriteLine(GetSum(1, 1));
 Console.WriteLine(GetSum(1, 0));
 Console.WriteLine("\n");
+
+//## Is this a triangle? =>
+
+//Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+//(In this case, all triangles must have surface greater than 0 to be accepted).
+
+//Solution => 
+
+static bool IsTriangle(int a, int b, int c) => a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a;
+//{
+//    return a + b > c && b + c > a && a + c > b;
+//}
+
+Console.WriteLine("Kata Is this a triangle?: \n");
+Console.WriteLine(IsTriangle(3,3,4));
+Console.WriteLine(IsTriangle(4,4,4));
+Console.WriteLine(IsTriangle(4,4,3));
+Console.WriteLine(IsTriangle(0,0,0));
+Console.WriteLine("\n");
