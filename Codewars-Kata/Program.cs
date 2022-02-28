@@ -74,3 +74,35 @@ Console.WriteLine(Order("is2 Thi1s T4est 3a"));
 Console.WriteLine(Order("4of Fo1r pe6ople g3ood th5e the2"));
 Console.WriteLine(Order(""));
 Console.WriteLine("\n");
+
+//## Beginner Series #3 Sum of Numbers =>
+
+//Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
+//Note: a and b are not ordered!
+//Examples(a, b)-- > output(explanation)
+//(1, 0)-- > 1(1 + 0 = 1)
+//(1, 2)-- > 3(1 + 2 = 3)
+//(0, 1)-- > 1(0 + 1 = 1)
+//(1, 1)-- > 1(1 since both are same)
+//(-1, 0)-- > -1(-1 + 0 = -1)
+//(-1, 2)-- > 2(-1 + 0 + 1 + 2 = 2)
+
+//Solution =>
+
+static int GetSum(int a, int b)
+{
+    //var result = 0;
+    //for (var i = Math.Min(a, b); i <= Math.Max(a, b); i++)
+    //{
+    //    result += i;
+    //}
+    //return result;
+    return (a + b) * (Math.Abs(a - b) + 1) / 2;
+}
+
+Console.WriteLine("Kata Beginner Series #3 Sum of Numbers: \n");
+Console.WriteLine(GetSum(-1, 0));
+Console.WriteLine(GetSum(-1, 2));
+Console.WriteLine(GetSum(1, 1));
+Console.WriteLine(GetSum(1, 0));
+Console.WriteLine("\n");
