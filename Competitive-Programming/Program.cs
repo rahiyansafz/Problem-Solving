@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System;
+
 Console.WriteLine("Basic");
 
 Console.WriteLine("\n");
@@ -855,9 +857,13 @@ static double SumDoubleOnly(object[] obj)
     double sum = 0.0;
     for (int i = 0; i < obj.Length; i++)
     {
-        if (obj[i] is double)
+        //if (obj[i] is double)
+        //{
+        //    sum += (double)obj[i];
+        //}
+        if (obj[i] is double @double)
         {
-            sum += (double)obj[i];
+            sum += @double;
         }
     }
 
@@ -1319,7 +1325,8 @@ static string RevertWordsOrder(string str)
         if (i == 0)
         {
             strArray[i] = strArray[len - 1].Remove(strArray[len - 1].Length - 1);
-            strArray[len - 1] = temp + strArray[len - 1].Substring(strArray[len - 1].Length - 1);
+            //strArray[len - 1] = temp + strArray[len - 1].Substring(strArray[len - 1].Length - 1);
+            strArray[len - 1] = string.Concat(temp, strArray[len - 1].AsSpan(strArray[len - 1].Length - 1));
         }
         else
         {
@@ -1532,7 +1539,9 @@ Console.WriteLine("\n");
 //StringInReverseOrderRecursion("abcde") → "edcba"
 //StringInReverseOrderRecursion("Sed lectus est, elementum ut urna eu") → "ue anru tu mutnemele ,tse sutcel deS"
 
-static string StringInReverseOrderRecursion(string str) => str.Length > 0 ? str[str.Length - 1] + StringInReverseOrderRecursion(str.Substring(0, str.Length - 1)) : str;
+//static string StringInReverseOrderRecursion(string str) => str.Length > 0 ? str[str.Length - 1] + StringInReverseOrderRecursion(str.Substring(0, str.Length - 1)) : str;
+//static string StringInReverseOrderRecursion(string str) => str.Length > 0 ? str[^1] + StringInReverseOrderRecursion(str.Substring(0, str.Length - 1)) : str;
+static string StringInReverseOrderRecursion(string str) => str.Length > 0 ? str[^1] + StringInReverseOrderRecursion(str[0..^1]) : str;
 
 Console.WriteLine("String In Reverse Order(Recursion): \n");
 var str1 = "A";
@@ -1561,12 +1570,14 @@ static bool IsPalindromeRecursion(string str)
     }
     else if (str.Length > 1)
     {
-        if (str[0] != str[str.Length - 1])
+        //if (str[0] != str[str.Length - 1])
+        if (str[0] != str[^1])
         {
             return false;
         }
 
-        return IsPalindromeRecursion(str.Substring(1, str.Length - 2));
+        //return IsPalindromeRecursion(str.Substring(1, str.Length - 2));
+        return IsPalindromeRecursion(str[1..^1]);
     }
 
     return false;

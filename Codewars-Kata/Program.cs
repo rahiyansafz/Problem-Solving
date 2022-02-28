@@ -40,3 +40,37 @@ Console.WriteLine("\n");
 //        Assert.AreEqual(2, Kata.DuplicateCount("Indivisibilities"), "characters may not be adjacent");
 //    }
 //}
+
+//## A square of squares =>
+
+//Solution => 
+
+static bool IsSquare(int n)
+{
+    //Your code goes here!
+    //var numCheck = (Math.Sqrt(n) % 1) == 0;
+    return ((Math.Sqrt(n) % 1) == 0);
+}
+
+Console.WriteLine("Kata A square of squares: \n");
+Console.WriteLine(IsSquare(7));
+Console.WriteLine(IsSquare(4));
+Console.WriteLine(IsSquare(0));
+Console.WriteLine(IsSquare(2));
+Console.WriteLine("\n");
+
+//## Your order, please =>
+
+//Solution =>
+
+static string Order(string words)
+{
+    if (string.IsNullOrEmpty(words)) return words;
+    return string.Join(" ", words.Split(' ').OrderBy(s => s.ToList().Find(c => char.IsDigit(c))));
+}
+
+Console.WriteLine("Kata Your order, please: \n");
+Console.WriteLine(Order("is2 Thi1s T4est 3a"));
+Console.WriteLine(Order("4of Fo1r pe6ople g3ood th5e the2"));
+Console.WriteLine(Order(""));
+Console.WriteLine("\n");
