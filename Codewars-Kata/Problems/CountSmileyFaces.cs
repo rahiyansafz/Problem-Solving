@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
-namespace Codewars_Kata.Problems
+namespace Codewars_Kata.Problems;
+
+internal class CountSmileyFaces
 {
-    internal class CountSmileyFaces
+    //## Count the smiley faces!
+    public static int CountSmileys(string[] smileys)
     {
-        //## Count the smiley faces!
-        static int CountSmileys(string[] smileys)
-        {
-            return smileys.Count(s => Regex.IsMatch(s, @"^[:;]{1}[~-]{0,1}[\)D]{1}$"));
-        }
-
-        //Console.WriteLine(CountSmileys(new string[] { ":)", ";(", ";}", ":-D" }));
-        //Console.WriteLine(CountSmileys(new string[] { ";D", ":-(", ":-)", ";~)" }));
-        //Console.WriteLine(CountSmileys(new string[] { ";]", ":[", ";*", ":$", ";-D" }));
+        return smileys.Count(s => Regex.IsMatch(s, @"^[:;]{1}[~-]{0,1}[\)D]{1}$"));
     }
+
+    //Console.WriteLine(CountSmileys(new string[] { ":)", ";(", ";}", ":-D" }));
+    //Console.WriteLine(CountSmileys(new string[] { ";D", ":-(", ":-)", ";~)" }));
+    //Console.WriteLine(CountSmileys(new string[] { ";]", ":[", ";*", ":$", ";-D" }));
 }
