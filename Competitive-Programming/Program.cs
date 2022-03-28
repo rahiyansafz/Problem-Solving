@@ -39,119 +39,20 @@ FractionsSum.FractedSum(7);
 
 int[] sortedArr = SortArrayAscending.AscendingSortedArray(new int[] { 0, -23, 9, 18, -51, 1, 90, 57, -1, 25 });
 
-
 foreach (var s in sortedArr)
 {
     Console.Write($"{s} "); // -51 -23 -1 0 1 9 18 25 57 90
 }
 Console.WriteLine("\n");
 
-//The Biggest Number
 
-//Given an array of integers, write a method that returns the biggest number in this array.
-//Expected input and output
-//TheBiggestNumber([190, 291, 145, 209, 280, 300]) → 291
-//TheBiggestNumber([-9, -2, -7, -8, -4]) → -2
+BiggestNumber.TheBiggestNumber(new int[] { -34, -54, -7, -40, -123, -99 });
 
-static int TheBiggestNumber(int[] numArr)
-{
-    int theBiggest = numArr[0];
+TwoSevensNextToEachOther.IsNextToEachOther(new int[] { 4, 7, 8, 2, 0, 5, 2, 7, 5, 8 });
 
-    for (int i = 1; i < numArr.Length; i++)
-    {
-        if (numArr[i] > theBiggest)
-        {
-            theBiggest = numArr[i];
-        }
-    }
+ThreeIncreasingAdjacent.IsAdjacentToThree(new int[] { -9, 0, -1, -6, -5, -4, -8, 0 });
 
-    return theBiggest;
-}
-
-Console.WriteLine("The Biggest Number: \n");
-Console.WriteLine(TheBiggestNumber(new int[] { 9, 4, 8, 1, 0, 2 }));                   // 9
-Console.WriteLine(TheBiggestNumber(new int[] { -34, -54, -7, -40, -123, -99 }));       // -7
-Console.WriteLine(TheBiggestNumber(new int[] { 1009, 998, 1090, 3000, 2934, 4888 }));  // 4888
-Console.WriteLine("\n");
-
-//Two 7s Next to Each Other
-
-//Given an array of positive digits, write a method that returns number of times that two 7's are next to each other in an array.
-//Expected input and output
-//Two7sNextToEachOther([ 8, 2, 5, 7, 9, 0, 7, 7, 3, 1]) → 
-//Two7sNextToEachOther([9, 4, 5, 3, 7, 7, 7, 3, 2, 5, 7, 7]) → 3
-
-static int Two7sNextToEachOther(int[] arr)
-{
-    int adjacent7s = 0;
-    for (int i = 0; i < arr.Length - 1; i++)
-    {
-        if (arr[i] == 7 && arr[i + 1] == 7)
-        {
-            adjacent7s++;
-        }
-    }
-
-    return adjacent7s;
-}
-
-Console.WriteLine("Two 7s Next to Each Other: \n");
-Console.WriteLine(Two7sNextToEachOther(new int[] { 7, 7, 8, 4, 3, 7, 2, 1, 0, 7 }));           // 1
-Console.WriteLine(Two7sNextToEachOther(new int[] { 4, 7, 8, 2, 0, 5, 2, 7, 5, 8 }));           // 0      
-Console.WriteLine(Two7sNextToEachOther(new int[] { 7, 7, 7, 0, 2, 6, 4, 8, 6, 5, 2, 7, 7 }));  // 3
-Console.WriteLine("\n");
-
-//Three Increasing Adjacent
-
-//Given an array of numbers, write a method that checks if there are three adjacent numbers where second is greater by 1 than the first one and third is greater by 1 than the second one.
-//Expected input and output
-//ThreeIncreasingAdjacent([45, 23, 44, 68, 65, 70, 80, 81, 82 ]) → True
-//ThreeIncreasingAdjacent([7, 3, 5, 8, 9, 3, 1, 4 ]) → False
-
-static bool ThreeIncreasingAdjacent(int[] arr)
-{
-    bool found = false;
-    for (int i = 1; i <= arr.Length - 2; i++)
-    {
-        if (arr[i - 1] + 1 == arr[i] && arr[i + 1] - 1 == arr[i])
-        {
-            found = true;
-        }
-    }
-
-    return found;
-}
-
-Console.WriteLine("Three Increasing Adjacent");
-Console.WriteLine(ThreeIncreasingAdjacent(new int[] { 7, 8, 9, 2, 4, 5, 0 }));                // True
-Console.WriteLine(ThreeIncreasingAdjacent(new int[] { -9, 0, -1, -6, -5, -4, -8, 0 }));       // True
-Console.WriteLine(ThreeIncreasingAdjacent(new int[] { 15, 17, 14, 11, 18, 19, 16, 16 }));     // False
-Console.WriteLine("\n");
-
-//Return Even Numbers
-
-//Write a method that returns a string of even numbers greater than 0 and less than 100.
-//Expected input and output
-//ReturnEvenNumbers() → "2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 86 88 90 92 94 96 98"
-
-
-static string ReturnEvenNumbers()
-{
-    string str = string.Empty;
-    for (int i = 1; i < 100; i++)
-    {
-        if (i % 2 == 0)
-        {
-            str += i + " ";
-        }
-    }
-
-    return str;
-}
-
-Console.WriteLine("Return Even Numbers: \n");
-Console.WriteLine(ReturnEvenNumbers());
-Console.WriteLine("\n");
+ReturnEvenNumbers.EvenNumbers();
 
 //Sieve of Eratosthenes
 
