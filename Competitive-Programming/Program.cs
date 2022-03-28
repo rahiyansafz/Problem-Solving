@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Competitive_Programming.Problems;
+using Competitive_Programming.Problems.Recursion;
 
 AddTwoNumbers.AddAndMultiply(1.7, 9.9, 0.01);
 
@@ -153,272 +154,45 @@ MakeUpperCase.UpperCaseMaker("very short sentence."); // VeRy ShOrT SeNtEnCe.
 //MakeUpperCase.UpperCaseMaker("motorcycle"); // MoToRcYcLe
 //MakeUpperCase.UpperCaseMaker("Events And Delegates"); // EvEnTs AnD DeLeGaTeS
 
+MixTwoStrings.StringMixer("DoG", "ElEpHaNt"); // DEolGEpHaNt
+//MixTwoStrings.StringMixer("The tallest", "XXXXXXXXXX"); // TXhXeX XtXaXlXlXeXsXt
 
-//Mix Two Strings
+NumberOfWords.NumOfWords("Mauris consectetur urna sit amet risus ultricies rutrum."); // 8
+//NumberOfWords.NumOfWords("Quisque M"); // 2
+//NumberOfWords.NumOfWords("Xor"); // 1
 
-//Given two strings, write a method that returns one string made of two strings. First letter of new string is first letter of first string, second letter of new string is first letter of second string and so on.
-//Expected input and output
-//MixTwoStrings("aaa", "BBB") → "aBaBaB"
-//MixTwoStrings("good one", "111") → "g1o1o1d one"
+RevertWordsOrder.RevertWords("Proin in odio viverra, accumsan purus vel, placerat elit!"); // elit placerat vel, purus accumsan viverra, odio in Proin!
+//RevertWordsOrder.RevertWords("Cras iaculis tortor justo."); // justo tortor iaculis Cras.
 
-static string MixTwoStrings(string word1, string word2)
-{
-    string mixedWord = string.Empty;
+HowManyOccurrences.Occurrences("He is a good boy, he would never do that!", "he"); // 1
+//HowManyOccurrences.Occurrences("104 593 00-930 720193", "93"); // 3
+//HowManyOccurrences.Occurrences("xyz", "a"); // 0
 
-    for (int i = 0; i < (word1.Length > word2.Length ? word1.Length : word2.Length); i++)
-    {
-        if (i < word1.Length)
-        {
-            mixedWord += word1[i];
-        }
-        if (i < word2.Length)
-        {
-            mixedWord += word2[i];
-        }
-    }
+SortCharactersDescending.SortByDescending("Aliquam pulvinar aliquam libero, in fringilla erat."); // vuuutrrrrqqponnnmmlllllliiiiiiigfeebaaaaaaA.,            
+//SortCharactersDescending.SortByDescending("Thi2 12  5@mpl3 Str!nG~"); // ~trpnmlihTSG@53221!
 
-    return mixedWord;
-}
+CompressString.StringCompressing("aaaabbcccccdaa"); //a4b2c5d1a2
+CompressString.StringCompressing("948kro"); //914181k1r1o1
+CompressString.StringCompressing("$999j*#jjjfYyyy"); //$193j1*1#1j3f1Y1y3
 
-Console.WriteLine("Mix Two Strings: \n");
-Console.WriteLine(MixTwoStrings("DoG", "ElEpHaNt"));           // DEolGEpHaNt
-Console.WriteLine(MixTwoStrings("The tallest", "XXXXXXXXXX")); // TXhXeX XtXaXlXlXeXsXt
-Console.WriteLine("\n");
+DigitsMultiplication.MultiplicationOfDigits(1234); // 24
+//DigitsMultiplication.MultiplicationOfDigits(94632); // 1296
+//DigitsMultiplication.MultiplicationOfDigits(222222222); // 512
 
-//Number Of Words
+Factorial.FactorialNumber(5); // 120
+//Factorial.FactorialNumber(1); // 1
+//Factorial.FactorialNumber(14); // 87178291200
+//Factorial.FactorialNumber(0); // 1
+//Factorial.FactorialNumber(20); // 2432902008176640000
 
-//Given a string, write a method that counts its number of words. Assume there are no leading and trailing whitespaces and there is only single whitespace between two consecutive words.
-//Expected input and output
-//NumberOfWords("This is sample sentence") → 4
-//NumberOfWords("OK") → 1
+Fibonacci.FibonacciNumber(10); // 55
+//Fibonacci.FibonacciNumber(0); // 0
+//Fibonacci.FibonacciNumber(20); // 6765
+//Fibonacci.FibonacciNumber(13); // 233
 
-static int NumberOfWords(string str)
-{
-    int numberOfWords = 0;
-    for (int i = 1; i < str.Length; i++)
-    {
-        numberOfWords = (char.IsWhiteSpace(str[i]) ? numberOfWords + 1 : numberOfWords);
-    }
-
-    return numberOfWords + 1;
-}
-
-Console.WriteLine("Number Of Words: \n");
-Console.WriteLine(NumberOfWords("Mauris consectetur urna sit amet risus ultricies rutrum."));  // 8
-Console.WriteLine(NumberOfWords("Quisque M"));  // 2
-Console.WriteLine(NumberOfWords("Xor"));  // 1
-Console.WriteLine("\n");
-
-//Revert Words Order
-
-//Given a string, write a method that returns new string with reverted words order. Pay attention to the punctuation at the end of the sentence (period).
-//Expected input and output
-//RevertWordsOrder("John Doe.") → "Doe John."
-//RevertWordsOrder("A, B. C") → "C B. A,"
-
-static string RevertWordsOrder(string str)
-{
-    string[] strArray = str.Split(' ');
-    int len = strArray.Length;
-
-    for (int i = 0; i < len / 2; i++)
-    {
-        string temp = strArray[i];
-
-        if (i == 0)
-        {
-            strArray[i] = strArray[len - 1].Remove(strArray[len - 1].Length - 1);
-            //strArray[len - 1] = temp + strArray[len - 1].Substring(strArray[len - 1].Length - 1);
-            strArray[len - 1] = string.Concat(temp, strArray[len - 1].AsSpan(strArray[len - 1].Length - 1));
-        }
-        else
-        {
-            strArray[i] = strArray[len - 1 - i];
-            strArray[len - 1 - i] = temp;
-        }
-    }
-
-    return string.Join(" ", strArray);
-}
-
-Console.WriteLine("Revert Words Order: \n");
-Console.WriteLine(RevertWordsOrder("Proin in odio viverra, accumsan purus vel, placerat elit!"));  // elit placerat vel, purus accumsan viverra, odio in Proin!
-Console.WriteLine(RevertWordsOrder("Cras iaculis tortor justo."));  // justo tortor iaculis Cras.
-Console.WriteLine("\n");
-
-//How Many Occurrences
-
-//Given a string and substring, write a method that returns number of occurrences of substring in the string. Assume that both are case-sensitive. You may need to use library function here.
-//Expected input and output
-//HowManyOccurrences("do it now", "do") → 1
-//HowManyOccurrences("empty", "d") → 0
-
-static int HowManyOccurrences(string str, string subStr)
-{
-    int found;
-    int total = 0;
-    for (int i = 0; i < str.Length; i++)
-    {
-        found = str.IndexOf(subStr, i);
-
-        if (found > -1)
-        {
-            total++;
-            i = found;
-        }
-    }
-
-    return total;
-}
-
-Console.WriteLine("How Many Occurrences: \n");
-Console.WriteLine(HowManyOccurrences("He is a good boy, he would never do that!", "he"));  // 1
-Console.WriteLine(HowManyOccurrences("104 593 00-930 720193", "93"));  // 3
-Console.WriteLine(HowManyOccurrences("xyz", "a"));  // 0
-Console.WriteLine("\n");
-
-//Sort Characters Descending
-
-//Given a string, write a method that returns array of chars (ASCII characters) sorted in descending order.
-//Expected input and output
-//SortCharactersDescending("onomatopoeia") → tpoooonmieaa
-//SortCharactersDescending("fohjwf42os") → wsoojhff42
-
-static char[] SortCharactersDescending(string str)
-{
-    char[] charArray = str.ToCharArray();
-    char ch;
-
-    for (int i = 1; i < str.Length; i++)
-    {
-        for (int j = 0; j < str.Length - 1; j++)
-        {
-            if (charArray[j] < charArray[j + 1])
-            {
-                ch = charArray[j];
-                charArray[j] = charArray[j + 1];
-                charArray[j + 1] = ch;
-            }
-        }
-    }
-
-    return charArray;
-}
-
-Console.WriteLine("Sort Characters Descending: \n");
-Console.WriteLine(SortCharactersDescending("Aliquam pulvinar aliquam libero, in fringilla erat."));  // vuuutrrrrqqponnnmmlllllliiiiiiigfeebaaaaaaA.,            
-Console.WriteLine(SortCharactersDescending("Thi2 12  5@mpl3 Str!nG~"));  // ~trpnmlihTSG@53221!
-Console.WriteLine("\n");
-
-//Compress String
-
-//Given a non-empty string, write a method that returns it in compressed format.
-//Expected input and output
-//CompressString("kkkktttrrrrrrrrrr") → "k4t3r10"
-//CompressString("p555ppp7www") → "p153p371w3"
-
-static string CompressString(string str)
-{
-    var count = 0;
-    var last = str[0];
-    var newStr = string.Empty;
-
-    foreach (var s in str)
-    {
-        if (s == last)
-        {
-            count++;
-        }
-        else
-        {
-            newStr += last.ToString() + count;
-            last = s;
-            count = 1;
-        }
-    }
-
-    newStr += last.ToString() + count;
-
-    return newStr;
-}
-
-Console.WriteLine("Compress String: \n");
-Console.WriteLine(CompressString("aaaabbcccccdaa"));  //a4b2c5d1a2
-Console.WriteLine(CompressString("948kro"));  //914181k1r1o1
-Console.WriteLine(CompressString("$999j*#jjjfYyyy"));  //$193j1*1#1j3f1Y1y3
-Console.WriteLine("\n");
-
-//Recursion
-
-//Digits Multiplication
-//Given a positive integer, write a method that returns multiplication of all digits in the number.
-//Expected input and output
-//DigitsMultiplication(456) → 120
-//DigitsMultiplication(123) → 6
-
-static int DigitsMultiplication(int num) => num > 10 ? num % 10 * DigitsMultiplication(num / 10) : num % 10;
-
-Console.WriteLine("Digits Multiplication: \n");
-Console.WriteLine(DigitsMultiplication(1234));       // 24
-Console.WriteLine(DigitsMultiplication(94632));      // 1296
-Console.WriteLine(DigitsMultiplication(222222222));  // 512
-Console.WriteLine("\n");
-
-//Factorial
-
-//Given a non-negative integer, write a method that returns factorial of a number.
-//Expected input and output
-//Factorial(4) → 24
-//Factorial(7) → 5040
-
-static long Factorial(int num) => num == 0 || num == 1 ? 1 : num * Factorial(num - 1);
-
-Console.WriteLine("Factorial: \n");
-Console.WriteLine(Factorial(5));  // 120
-Console.WriteLine(Factorial(1));  // 1
-Console.WriteLine(Factorial(14)); // 87178291200
-Console.WriteLine(Factorial(0));  // 1
-Console.WriteLine(Factorial(20)); // 2432902008176640000
-Console.WriteLine("\n");
-
-//Fibonacci Number
-
-//Given a non-negative integer, write a method that returns n-th element of Fibonacci sequence.
-//Expected input and output
-//FibonacciNumber(3) → 2
-//FibonacciNumber(7) → 13
-
-static int FibonacciNumber(int num) => num <= 1 ? num : FibonacciNumber(num - 2) + FibonacciNumber(num - 1);
-
-Console.WriteLine("Fibonacci Number: \n");
-Console.WriteLine(FibonacciNumber(10));  // 55
-Console.WriteLine(FibonacciNumber(0));   // 0
-Console.WriteLine(FibonacciNumber(20));  // 6765
-Console.WriteLine(FibonacciNumber(13));  // 233
-Console.WriteLine("\n");
-
-//Numbers Multiplication
-
-//Given two integers a and b (a <= b) as range, write a method that returns multiplication of numbers from given range.
-//Expected input and output
-//NumbersMultiplication(5, 7) → 210
-//NumbersMultiplication(50, 50) → 50
-
-static int NumbersMultiplication(int from, int to)
-{
-    while (from == to)
-    {
-        return from;
-    }
-
-    return from * NumbersMultiplication(from + 1, to);
-}
-
-Console.WriteLine("Numbers Multiplication: \n");
-Console.WriteLine($"{NumbersMultiplication(1, 5)}");     // 120
-Console.WriteLine($"{NumbersMultiplication(-27, -22)}"); // 213127200
-Console.WriteLine($"{NumbersMultiplication(44, 44)}");   // 44  
-Console.WriteLine("\n");
+NumbersMultiplication.MultiplicationNumbers(1, 5); // 120
+//NumbersMultiplication.MultiplicationNumbers(-27, -22); // 213127200
+//NumbersMultiplication.MultiplicationNumbers(44, 44); // 44  
 
 //To The Power Of (Recursion)
 
