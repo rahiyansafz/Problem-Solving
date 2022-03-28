@@ -37,33 +37,8 @@ MultiplicationTable.MultiplicatedTable();
 
 FractionsSum.FractedSum(7);
 
-//Sort Array Ascending
+int[] sortedArr = SortArrayAscending.AscendingSortedArray(new int[] { 0, -23, 9, 18, -51, 1, 90, 57, -1, 25 });
 
-//Given an array of integers, write a method that returns sorted array in ascending order.
-//Expected input and output
-//SortArrayAscending([9, 5, 7, 2, 1, 8]) →  [1, 2, 5, 7, 8, 9] 
-
-static int[] SortArrayAscending(int[] arr)
-{
-    int temp;
-    for (int i = 0; i < arr.Length - 1; i++)
-    {
-        for (int j = 0; j < arr.Length - 1; j++)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                temp = arr[j + 1];
-                arr[j + 1] = arr[j];
-                arr[j] = temp;
-            }
-        }
-    }
-
-    return arr;
-}
-
-int[] sortedArr = SortArrayAscending(new int[] { 0, -23, 9, 18, -51, 1, 90, 57, -1, 25 });
-Console.WriteLine("Sort Array Ascending: \n");
 
 foreach (var s in sortedArr)
 {
