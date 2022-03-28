@@ -1,285 +1,37 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System;
+using Competitive_Programming.Problems;
 
-Console.WriteLine("Basic");
+AddTwoNumbers.AddAndMultiply(1.7, 9.9, 0.01);
 
-Console.WriteLine("\n");
-Console.WriteLine("\n");
+ElementaryOperations.EOperations(-375, 25);
 
-//Add Two Numbers
+IsResultSame.IsResultTheSame(3 + 7, 12 - 2);
 
-//Given three numbers, write a method that adds two first ones and multiplies them by a third one.
-//Expected input and output
-//AddAndMultiply(2, 4, 5) → 30
+ModuloOperations.ModOperations(1, 1, 1);
 
-static double AddAndMultiply(double a, double b, double c) => (a + b) * c;
+TheCubeOf.Cube(3);
 
-Console.WriteLine("Add Two Numbers: \n");
-Console.WriteLine(AddAndMultiply(1.7, 9.9, 0.01));
-Console.WriteLine("\n");
+SwapTwoNumbers.Swap(-123, 999);
 
-//Elementary Operations
+AbsoluteValue.Absolute(-999);
 
-//Given two integers, write a method that returns results of their elementary arithmetic operations: addition, substraction, multiplication, division. Remember that you can't divide any number by 0!
-//Expected input and output
-//ElementaryOperations(3, 8) → 11, -5, 24, 0.375
+DivisibleBy.IsDivisible(444, 0);
 
-static string ElementaryOperations(int a, int b)
-{
-    int addition = a + b;
-    int substraction = a - b;
-    int multiplication = a * b;
-    double division = b != 0 ? a / (double)b : 0;
-    return String.Format($"a + b = {addition}, a - b = {substraction}, a * b = {multiplication}, a / b = {division}");
-}
+ConsistencyOfUpperCase.IfConsistsOfUppercaseLetters("drY");
 
-Console.WriteLine("Elementary operations: \n");
-Console.WriteLine(ElementaryOperations(1, 2));
-Console.WriteLine(ElementaryOperations(-375, 25));
-Console.WriteLine("\n");
+GreaterThanThirdOne.IfGreaterThanThirdOne(new int[] { -15, -25, 100 });
 
-//Is Result The Same ???
+IfNumberIsEven.IsNumberEven(-43234670);
 
-//Given two different arithmetic operations (addition, substraction, multiplication, division), write a method that checks if they return the same result.
-//Expected input and output
-//IsResultTheSame(2+2, 2*2) → true
-//IsResultTheSame(9 / 3, 16 - 1) → false
+IfSortedArray.IsSortedByAscending(new int[] { 3, 6, 9 });
 
-static bool IsResultTheSame(double a, double b) => a == b;
+IfHasANeighbour.HasNeighbour("PRT"); // "DCA"
 
-Console.WriteLine("Is result the same ???: \n");
-Console.WriteLine(IsResultTheSame(3 * 3, 18 / 2));
-Console.WriteLine(IsResultTheSame(3 + 7, 12 - 2));
-Console.WriteLine("\n");
+PositiveNegativeOrZero.StateOfNumber(0.0);
 
-//Modulo Operations
+LeapYear.IsYearLeap(2023);
 
-//Given three integers, write a method that returns first number divided modulo by second one and these divided modulo by third one.
-//Expected input and output
-//ModuloOperations(8, 5, 2) → 1
-
-static int ModuloOperations(int a, int b, int c) => a % b % c;
-
-Console.WriteLine("Modulo operations: \n");
-Console.WriteLine(ModuloOperations(542, 28, 7));
-Console.WriteLine(ModuloOperations(1, 1, 1));
-Console.WriteLine("\n");
-
-//The Cube Of
-
-//Given a number, write a method that returns its cube.
-//Expected input and output
-//TheCubeOf(2) → 8
-//TheCubeOf(-5.5) → -166.375
-
-static double TheCubeOf(double num) => num * num * num;
-
-Console.WriteLine("The cube of: \n");
-Console.WriteLine(TheCubeOf(2));
-Console.WriteLine(TheCubeOf(3));
-Console.WriteLine("\n");
-
-//Swap Two Numbers
-
-//Given two integers, write a method that swaps them using temporary variable.
-//Expected input and output
-//SwapTwoNumbers(87, 45) → "Before: a = 87, b = 45; After: a = 45, b = 87"
-//SwapTwoNumbers(-13, 2) → "Before: a = -13, b = 2; After: a = 2, b = -13"
-
-static string SwapTwoNumbers(int a, int b)
-{
-    string before = $"Before: a = {a}, b = {b}; ";
-    int temp;
-
-    temp = b;
-    b = a;
-    a = temp;
-
-    string after = $"After: a = {a}, b = {b}";
-    return before + after;
-}
-
-Console.WriteLine("Swap two numbers: \n");
-Console.WriteLine(SwapTwoNumbers(23, 15));
-Console.WriteLine(SwapTwoNumbers(-123, 999));
-Console.WriteLine(SwapTwoNumbers(0, 333));
-Console.WriteLine("\n");
-
-//Absolute Value
-
-//Given an integer, write a method that returns its absolute value.
-//Expected input and output
-//AbsoluteValue(6832) → 6832
-//AbsoluteValue(-392) → 392
-
-static int AbsoluteValue(int number) => number >= 0 ? number : number * -1;
-
-Console.WriteLine("Absolute Value: \n");
-Console.WriteLine(AbsoluteValue(-999));
-Console.WriteLine(AbsoluteValue(9));
-Console.WriteLine(AbsoluteValue(0));
-Console.WriteLine("\n");
-
-//Divisible By 2 Or 3
-
-//Given two integers, write a method that returns their multiplication if they are both divisible by 2 or 3, otherwise returns thier sum.
-//Expected input and output
-//DivisibleBy2Or3(15, 30) → 450
-//DivisibleBy2Or3(2, 90) → 180
-//DivisibleBy2Or3(7, 12) → 19
-
-static int DivisibleBy2Or3(int a, int b) => (a % 2 == 0 && b % 2 == 0 || a % 3 == 0 && b % 3 == 0) ? a * b : a + b;
-
-Console.WriteLine("Divisible: \n");
-Console.WriteLine(DivisibleBy2Or3(2, 18));   // 36
-Console.WriteLine(DivisibleBy2Or3(444, 0));  // 0
-Console.WriteLine("\n");
-
-//If Consists Of Uppercase Letters
-
-//Given a 3 characters long string, write a method that checks if it consists only of uppercase letters.
-//Expected input and output
-//IfConsistsOfUppercaseLetters("xyz") → false
-//IfConsistsOfUppercaseLetters("DOG") → true
-//IfConsistsOfUppercaseLetters("L9#") → false
-
-static bool IfConsistsOfUppercaseLetters(string str) => (str[0] >= 65 && str[1] >= 65 && str[2] >= 65) && (str[0] <= 90 && str[1] <= 90 && str[2] <= 90);
-
-Console.WriteLine("Consists of UpperCase: \n");
-Console.WriteLine(IfConsistsOfUppercaseLetters("drY"));
-Console.WriteLine(IfConsistsOfUppercaseLetters("LOL"));
-Console.WriteLine("\n");
-
-//If Greater Than Third One
-
-//Given an array of 3 integers, write a method that checks if multiplication or sum of two first numbers is greater than third one.
-//Expected input and output
-//IfGreaterThanThirdOne([2, 7, 12]) → true
-//IfGreaterThanThirdOne([-5, -8, 50]) → false
-
-static bool IfGreaterThanThirdOne(int[] arr) => arr[0] + arr[1] >= arr[2] || arr[0] * arr[1] > arr[2];
-
-Console.WriteLine("Greater than the third one: \n");
-Console.WriteLine(IfGreaterThanThirdOne(new int[] { -15, -25, 100 })); // True
-Console.WriteLine(IfGreaterThanThirdOne(new int[] { 11, 15, 166 }));   // False
-Console.WriteLine("\n");
-
-//If Number Is Even
-
-//Given an integer, write a method that checks if it is even.
-//Expected input and output
-//IfNumberIsEven(721) → false
-//IfNumberIsEven(1248) → true
-
-static bool IfNumberIsEven(int num) => num % 2 == 0;
-
-Console.WriteLine("Even or not!: \n");
-Console.WriteLine(IfNumberIsEven(8));
-Console.WriteLine(IfNumberIsEven(54749));
-Console.WriteLine(IfNumberIsEven(-43234670));
-Console.WriteLine(IfNumberIsEven(0));
-Console.WriteLine(IfNumberIsEven(-950541901));
-Console.WriteLine(IfNumberIsEven(2140872324));
-Console.WriteLine("\n");
-
-//If Sorted Ascending
-
-//Given an array of three integers, write a method that checks if they are sorted in ascending order.
-//Expected input and output
-//IfSortedAscending([3, 7, 10])→ true
-//IfSortedAscending([74, 62, 99])→ false
-
-static bool IfSortedAscending(int[] arr) => arr[0] <= arr[1] && arr[1] <= arr[2];
-
-Console.WriteLine("Sorted Ascending: \n");
-Console.WriteLine(IfSortedAscending(new int[] { 3, 6, 9 })); // True
-Console.WriteLine(IfSortedAscending(new int[] { 34, 17, 90 })); // False
-Console.WriteLine(IfSortedAscending(new int[] { -50, -24, -1 })); // True
-Console.WriteLine("\n");
-
-//If Has Neighbour
-
-//Given three letter long string, write a method that checks if at least one neighbour of middle letter is its neighbour in the alphabet.
-//Expected input and output
-//IsLonelyIsland("XYZ") → True
-//IsLonelyIsland("GWK") → False
-
-Console.WriteLine("Has Neighbour?: \n");
-
-static bool IfHasNeighbour(string word) => word[0] == word[1] - 1 || word[0] == word[1] + 1 || word[2] == word[1] - 1 || word[2] == word[1] + 1;
-
-Console.WriteLine(IfHasNeighbour("DCA")); // True
-Console.WriteLine(IfHasNeighbour("PRT")); // False
-Console.WriteLine("\n");
-
-//Positive, Negative Or Zero
-
-//Given a number, write a method that checks if it is positive, negative or zero.
-//Expected input and output
-//PositiveNegativeOrZero(5.24) → positive
-//PositiveNegativeOrZero(0.0) → zero
-//PositiveNegativeOrZero(-994.53) → negative
-
-static string PositiveNegativeOrZero(double num)
-{
-    if (num > 0.0)
-    {
-        return "Positive";
-    }
-    else if (num < 0.0)
-    {
-        return "Negative";
-    }
-
-    return "Zero";
-}
-
-Console.WriteLine("Positive, negative or zero??: \n");
-Console.WriteLine(PositiveNegativeOrZero(3.14)); // Positive
-Console.WriteLine(PositiveNegativeOrZero(0.0)); // Zero
-Console.WriteLine(PositiveNegativeOrZero(-200.003)); // Negative
-Console.WriteLine("\n");
-
-//If Year Is Leap
-
-//Given a year as integer, write a method that checks if year is leap.
-//Expected input and output
-//IfYearIsLeap(2016) → true
-//IfYearIsLeap(2018) → false
-
-static bool IfYearIsLeap(int year) => (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
-
-Console.WriteLine("Leap Year: \n");
-Console.WriteLine(IfYearIsLeap(2023));
-Console.WriteLine(IfYearIsLeap(2024));
-Console.WriteLine("\n");
-
-//If Number Contains 3
-
-//Write a method that checks if given number (positive integer) contains digit 3. Do not convert number to other type. Do not use built-in functions like Contains(), StartsWith(), etc.
-//Expected input and output
-//IfNumberContains3(7201432) → true
-//IfNumberContains3(87501) → false
-
-static bool IfNumberContains3(int number)
-{
-    while (number > 0)
-    {
-        if (number % 10 == 3)
-        {
-            return true;
-        }
-        number /= 10;
-    }
-
-    return false;
-}
-
-Console.WriteLine("Contains 3: \n");
-Console.WriteLine(IfNumberContains3(5384562));
-Console.WriteLine(IfNumberContains3(0));
-Console.WriteLine(IfNumberContains3(390462));
-Console.WriteLine("\n");
+ContainingThree.IsContainThree(5384562);
 
 //Multiplication Table
 
