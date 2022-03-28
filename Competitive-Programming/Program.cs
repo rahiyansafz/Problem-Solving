@@ -54,35 +54,7 @@ ThreeIncreasingAdjacent.IsAdjacentToThree(new int[] { -9, 0, -1, -6, -5, -4, -8,
 
 ReturnEvenNumbers.EvenNumbers();
 
-//Sieve of Eratosthenes
-
-//Given an integer n (n>2), write a method that returns prime numbers from range [2, n].
-//Expected input and output
-//SieveOfEratosthenes(30) → [2, 3, 5, 7, 11, 13, 17, 19, 23, 29] 
-
-static bool[] SieveOfEratosthenes(int n)
-{
-    bool[] array = new bool[n];
-
-    for (int i = 2; i < n; i++)
-    {
-        array[i] = true;
-    }
-
-    for (int j = 2; j * j <= n; j++)
-    {
-        if (array[j] == true)
-        {
-            for (int k = j * j; k < n; k += j)
-            {
-                array[k] = false;
-            }
-        }
-    }
-    return array;
-}
-
-var arrayOfPrimes = SieveOfEratosthenes(100);
+var arrayOfPrimes = SieveOfEratosthenes.SieveOfEratosthenesFunc(100);
 Console.WriteLine("Sieve of EratosthenesL: \n");
 
 for (int i = 0; i < arrayOfPrimes.Length; i++)
@@ -94,47 +66,7 @@ for (int i = 0; i < arrayOfPrimes.Length; i++)
 }
 Console.WriteLine("\n");
 
-//Draw Hourglass
-
-//Write a method that draws hourglass shape like below.
-//Expected input and output
-//DrawHourglass() →
-
-//***********
-// *********
-//  *******
-//   *****
-//    ***
-//     *
-//    ***
-//   *****
-//  *******
-// *********
-//***********
-
-static void DrawHourglass()
-{
-    for (var i = 0; i <= 10; i++)
-    {
-        for (var j = 0; j < (i <= 5 ? i : 10 - i); j++)
-        {
-            Console.Write(" ");
-        }
-        for (var k = i <= 5 ? i : 10 - i; k <= (i <= 5 ? 10 - i : i); k++)
-        {
-            Console.Write("*");
-        }
-        for (var m = 10 - i; m < 10; m++)
-        {
-            Console.Write(" ");
-        }
-        Console.WriteLine();
-    }
-}
-
-Console.WriteLine("Draw Hourglass: \n");
-DrawHourglass();
-Console.WriteLine("\n");
+DrawHourglass.HourGlassDrawing();
 
 //Draw Parallelogram
 
