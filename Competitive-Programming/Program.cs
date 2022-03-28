@@ -72,45 +72,7 @@ DrawParallelogram.ParallelogramDrawing();
 
 DrawCristmasTree.ChristmasTreeDrawing();
 
-
-    //Extract String
-
-    //Given a string, write a method that returns substring from between two double hash signs (#).
-    //Expected input and output
-    //ExtractString("##abc##def") → "abc"
-    //ExtractString("12####78") → empty string
-    //ExtractString("gar##d#en") → empty string
-    //ExtractString("++##--##++") → "--"
-
-    static string ExtractString(string word)
-{
-    string extractedWord = string.Empty;
-
-    for (int i = 0; i <= word.Length - 1; i++)
-    {
-        if (word[i] == '#' && word[i + 1] == '#')
-        {
-            for (int j = i + 2; j <= word.Length - 1; j++)
-            {
-                if (word[j] == '#' && word[j + 1] == '#')
-                {
-                    return extractedWord;
-                }
-                extractedWord += word[j];
-            }
-        }
-    }
-
-    return string.Empty;
-}
-
-Console.WriteLine("Extract String: \n");
-Console.WriteLine(ExtractString("kFp##jFoRj##pL")); // jFoRj
-Console.WriteLine(ExtractString("abc##def"));       // /empty string/
-Console.WriteLine(ExtractString("##123456789##"));  // 123456789
-Console.WriteLine(ExtractString("no####thing"));    // /empty string/
-Console.WriteLine(ExtractString("empty"));          // /empty string/
-Console.WriteLine("\n");
+ExtractString.ExtractingString("kFp##jFoRj##pL");
 
 //Full Sequence Of Letters
 
