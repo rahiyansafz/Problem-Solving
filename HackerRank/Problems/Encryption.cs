@@ -1,9 +1,9 @@
-﻿namespace Codewars_Kata.Problems;
+﻿namespace HackerRank.Problems;
 
-internal class Encryption
+static class Encryption
 {
     // ##Encryption 
-    public static void EncryptionCP()
+    public static void EncryptionFunc()
     {
         var InputText = Console.ReadLine();
         if (InputText is not null)
@@ -22,7 +22,9 @@ internal class Encryption
             }
         }
     }
+
 }
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -50,29 +52,29 @@ Time Complexity:  O(n)
 Space Complexity: O(1) //Number of dynamically allocated variables remain constant for any length of string input.
 */
 
-                        //static void Encryption()
-                        //{
-                        //    var InputText = Console.ReadLine();
-                        //    if (InputText is not null)
-                        //    {
-                        //        var colCount = (int)Math.Ceiling(Math.Sqrt(InputText.Length));
+//static void Encryption()
+//{
+//    var InputText = Console.ReadLine();
+//    if (InputText is not null)
+//    {
+//        var colCount = (int)Math.Ceiling(Math.Sqrt(InputText.Length));
 
-                        //        for (int i = 0; i < colCount; i++)
-                        //        {
-                        //            var counter = 0;
-                        //            while (i + (counter * colCount) < InputText.Length)
-                        //            {
-                        //                Console.Write(InputText[i + (counter * colCount)]);
-                        //                counter++;
-                        //            }
-                        //            Console.Write(' ');
-                        //        }
-                        //    }
-                        //}
+//        for (int i = 0; i < colCount; i++)
+//        {
+//            var counter = 0;
+//            while (i + (counter * colCount) < InputText.Length)
+//            {
+//                Console.Write(InputText[i + (counter * colCount)]);
+//                counter++;
+//            }
+//            Console.Write(' ');
+//        }
+//    }
+//}
 
-                        //Console.WriteLine("Encryption: \n");
-                        //Encryption();
-                        //Console.WriteLine("\n");
+//Console.WriteLine("Encryption: \n");
+//Encryption();
+//Console.WriteLine("\n");
 
 //Hackerrank boilerplate solution =>
 
