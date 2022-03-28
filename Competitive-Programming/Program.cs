@@ -74,557 +74,85 @@ DrawCristmasTree.ChristmasTreeDrawing();
 
 ExtractString.ExtractingString("kFp##jFoRj##pL");
 
-//Full Sequence Of Letters
-
-//Given a string of two letters, where first one occurs before the second in the alphabet, write a method that returns full sequence of letters starting from first and ending at the second one.
-//Expected input and output
-//FullSequenceOfLetters("ds") → "defghijklmnopqrs"
-//FullSequenceOfLetters("or") → "opqr"
-
-static string FullSequenceOfLetters(string word)
-{
-    string fullSequence = string.Empty;
-    for (int i = word[0], j = 0; i <= word[1]; i++, j++)
-    {
-        fullSequence += (char)(word[0] + j);
-    }
-
-    return fullSequence;
-}
-
-Console.WriteLine("Full Sequence Of Letters: \n");
-Console.WriteLine(FullSequenceOfLetters("bg")); // bcdefg
-Console.WriteLine(FullSequenceOfLetters("xy")); // xy            
-Console.WriteLine(FullSequenceOfLetters("az")); // abcdefghijklmnopqrstuvwxyz
-Console.WriteLine("\n");
+FullSequenceOfLetters.SequenceOfFullLetters("bg"); // bcdefg // "xy" => xy // "az" => abcdefghijklmnopqrstuvwxyz
 
 
 //Longest Strictly Increasing Sequence
 
-//Given an array of integers, write a method that returns value of the longest strictly increasing sequence of numbers.
-//Expected input and output
-//LongestStrictlyIncreasingSequence([0, 3, 4, 5, 6, 4, 9]) → 3
-//LongestStrictlyIncreasingSequence([7, 7, 7, 7, 7]) → 0
+LongestIncreasingSequence.IncreasingSequence(new int[] { 4, 7, 2, 6, 4, 5, 6, 7, 8, 0, 7, 1, 2, 3 }); // 4
+//LongestIncreasingSequence.IncreasingSequence(new int[] { 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 }); // 1
+//LongestIncreasingSequence.IncreasingSequence(new int[] { 2, 3, 4, 5, 6, 7, 8 }); // 6
+//LongestIncreasingSequence.IncreasingSequence(new int[] { 1, 1, 1, 1, 1, }); // 0
+
+BitsToNumber.BitNumber("0");        // 0
+//BitsToNumber.BitNumber("00001011000001");       // 705
+//BitsToNumber.BitNumber("10001110001010100");        // 72288
+
+DigitsSum.SumOfDigit(5); // 5
+//DigitsSum.SumOfDigit(1029584739); // 48
+//DigitsSum.SumOfDigit(99999999); // 72
+
+SumAndAverage.SummationAndAverage(20, 21); // Sum: 41 Average: 20,5
+SumAndAverage.SummationAndAverage(55, 55); // Sum: 55 Average: 55
+SumAndAverage.SummationAndAverage(0, 100); // Sum: 5050 Average: 50
+
+SumDoubleOnly.DoubleSum(new object[] { 8.9, "dog", 6, 'c', 15.99, 745, true }); // 24.89
+
+DrawTriangle.TriangleDrawing();
+
+ToThePowerOf.PowerToThe(8, -8); // 5.96046447753906E-08
+//ToThePowerOf.PowerToThe(5, -2); // 0.04
+//ToThePowerOf.PowerToThe(10, 0); // 1
+//ToThePowerOf.PowerToThe(0, 5) // 0
+
+LettersBalance.BalanceOfLetters("kfdfdk"); // True
+//LettersBalance.BalanceOfLetters("reyjer"); // False
+//LettersBalance.BalanceOfLetters("wkxzcsazsckawx"); // True
+//LettersBalance.BalanceOfLetters("pkmqsdedeskgqm"); // False
+
+ReplaceTwoWords.WordReplacing("dog_octopus", '_'); // octopus_dog
+//ReplaceTwoWords.WordReplacing("a.b", '.'); // b.a
+//ReplaceTwoWords.WordReplacing("good very", ' '); // very good
+
+DigitalRoot.DigitalizedRoot(5); // 5
+//DigitalRoot.DigitalizedRoot(1029584739); // 3
+//DigitalRoot.DigitalizedRoot(99999999); // 9
+
+CheckBracketSequence.BracketsSequence("((()()()))"); // True
+//CheckBracketSequence.BracketsSequence(")"); // False
+//CheckBracketSequence.BracketsSequence(")(())("); // True
+//CheckBracketSequence.BracketsSequence("()())()"); // False
+//CheckBracketSequence.BracketsSequence("((()(((()())))())())"); // True
+
+AddSeparator.Separator("computer", "_"); // c_o_m_p_u_t_e_r
+//AddSeparator.Separator("$*(#", " "); // $ * ( #
+//AddSeparator.Separator("AC", "B"); // ABC
+//AddSeparator.Separator("octopus", "X"); // oXcXtXoXpXuXs
+
+Palindrome.IsPalindrome("madam"); // True
+//Palindrome.IsPalindrome("123454321"); // True
+//Palindrome.IsPalindrome("apple"); // False
+//Palindrome.IsPalindrome("Never Odd Or Even"); // True
+//Palindrome.IsPalindrome("Curabitur vel est diam"); // False
+//Palindrome.IsPalindrome("x"); // True
+
+LengthOfString.StringLength("Lorem ipsum dolor sit amet"); //26
+//LengthOfString.StringLength(string.Empty); //0
+//LengthOfString.StringLength("conse12ctetur "); //14
+
+StringInReverseOrder.ReverseOrderString("Vivamus commodo quam at purus "); // surup ta mauq odommoc sumaviV
+//StringInReverseOrder.ReverseOrderString("34 ( 9  9@*"); // *@9  9 ( 43
+//StringInReverseOrder.ReverseOrderString("malesuada"); // adauselam
+
+SumDigitsInString.SumOfStringDigit("aaa5aa5aa5a5a"); // 20
+//SumDigitsInString.SumOfStringDigit("10r3m1p5um"); // 10
+//SumDigitsInString.SumOfStringDigit("tt"); //0
+
+
+MakeUpperCase.UpperCaseMaker("very short sentence."); // VeRy ShOrT SeNtEnCe.
+//MakeUpperCase.UpperCaseMaker("motorcycle"); // MoToRcYcLe
+//MakeUpperCase.UpperCaseMaker("Events And Delegates"); // EvEnTs AnD DeLeGaTeS
 
-static int LongestStrictlyIncreasingSequence(int[] array)
-{
-    int tempLongest = 0;
-    int longest = 0;
-
-    for (int i = 0; i < array.Length - 1; i++)
-    {
-        if (array[i + 1] > array[i])
-        {
-            tempLongest++;
-        }
-        else
-        {
-            tempLongest = 0;
-        }
-
-        if (tempLongest > longest)
-        {
-            longest = tempLongest;
-        }
-    }
-
-    return longest;
-}
-
-
-Console.WriteLine("Longest Strictly Increasing Sequence: \n");
-Console.WriteLine(LongestStrictlyIncreasingSequence(new int[] { 4, 7, 2, 6, 4, 5, 6, 7, 8, 0, 7, 1, 2, 3 })); // 4
-Console.WriteLine(LongestStrictlyIncreasingSequence(new int[] { 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 })); // 1
-Console.WriteLine(LongestStrictlyIncreasingSequence(new int[] { 2, 3, 4, 5, 6, 7, 8 })); // 6
-Console.WriteLine(LongestStrictlyIncreasingSequence(new int[] { 1, 1, 1, 1, 1, })); // 0
-Console.WriteLine("\n");
-
-//Bits To Number
-
-//Write a method that takes non-empty string of bits as an argument and returns number as integer.
-//Expected input and output
-//BitsToNumber("1") → 1
-//BitsToNumber("100010") → 34
-
-static int BitsToNumber(string bits)
-{
-    var number = 0;
-
-    for (var i = 0; i < bits.Length; i++)
-    {
-        number += (int)(char.GetNumericValue(bits[i]) * Math.Pow(2, bits.Length - i - 1));
-    }
-    return number;
-}
-
-Console.WriteLine("Bits To Number: \n");
-Console.WriteLine(BitsToNumber("0"));                   // 0
-Console.WriteLine(BitsToNumber("00001011000001"));      // 705
-Console.WriteLine(BitsToNumber("10001110001010100"));   // 72288
-Console.WriteLine("\n");
-
-//Digits Sum
-
-//Given a non-negative number, write a method that returns sum of its digits.
-//Expected input and output
-//DigitsSum(5434) → 16
-//DigitsSum(904861) → 28
-
-static int DigitsSum(uint number)
-{
-    int sum = 0;
-    int i = 10;
-    int j = 1;
-
-    while (number / j >= 1)
-    {
-        sum += (int)(number % i / j);
-
-        i *= 10;
-        j *= 10;
-    }
-
-    return sum;
-}
-
-Console.WriteLine("Digits Sum: \n");
-Console.WriteLine(DigitsSum(5));  // 5
-Console.WriteLine(DigitsSum(1029584739)); // 48
-Console.WriteLine(DigitsSum(99999999));    // 72
-Console.WriteLine("\n");
-
-//Sum And Average
-
-//Given two integers n and m (n <= m), write a method that returns sum of all integers and average from range [n, m].
-//Expected input and output
-//SumAndAverage(11, 66) → "Sum: 2156, Average: 38.5"
-//SumAndAverage(-10, 0) → "Sum: -55, Average: -5"
-
-static string SumAndAverage(int lowest, int highest)
-{
-    int sum = 0;
-    int range = 0;
-    for (int i = lowest; i <= highest; i++)
-    {
-        sum += i;
-        range++;
-    }
-
-    double average = sum / (double)range;
-
-    return string.Format($"Sum: {sum}, Average: {average}");
-}
-
-Console.WriteLine("Sum And Average: \n");
-Console.WriteLine(SumAndAverage(20, 21)); // Sum: 41 Average: 20,5
-Console.WriteLine(SumAndAverage(55, 55)); // Sum: 55 Average: 55
-Console.WriteLine(SumAndAverage(0, 100)); // Sum: 5050 Average: 50
-Console.WriteLine("\n");
-
-//Sum Double Only
-
-//Given an array of objects, write a method that returns sum of objects of double type.
-//Expected input and output
-//SumDoubleOnly(["abc", 5.6, 14, 'c', true, 'x', false, 567, 2.22]) → 7.82
-
-static double SumDoubleOnly(object[] obj)
-{
-    double sum = 0.0;
-    for (int i = 0; i < obj.Length; i++)
-    {
-        //if (obj[i] is double)
-        //{
-        //    sum += (double)obj[i];
-        //}
-        if (obj[i] is double @double)
-        {
-            sum += @double;
-        }
-    }
-
-    return sum;
-}
-
-Console.WriteLine("Sum Double Only: \n");
-Console.WriteLine(SumDoubleOnly(new object[] { 8.9, "dog", 6, 'c', 15.99, 745, true })); // 24.89
-Console.WriteLine("\n");
-
-//Draw Triangle
-
-//Write a method that draws triangle shape like below.
-//Expected input and output
-// DrawTriangle() →
-//         *
-//        **
-//       ***
-//      ****
-//     *****
-//    ******
-//   *******
-//  ********
-// *********
-//**********
-
-static void DrawTriangle()
-{
-    for (int i = 0; i < 10; i++)
-    {
-        for (int j = 10; j > i; j--)
-        {
-            Console.Write(" ");
-        }
-        for (int k = 10; k >= 10 - i; k--)
-        {
-            Console.Write("*");
-        }
-        Console.WriteLine();
-    }
-}
-
-
-Console.WriteLine("Draw Triangle: \n");
-DrawTriangle();
-Console.WriteLine("\n");
-
-//To The Power Of
-
-//Given two integers, write a method that returns first number raised to the power of second one.
-//Expected input and output
-//ToThePowerOf(-2, 3) → -8
-//ToThePowerOf(5, 5) → 3125
-
-static double ToThePowerOf(int b, int exp)
-{
-    double result = 1;
-    if (exp == 0)
-    {
-        return 1;
-    }
-
-    for (int i = 1; exp > 0 ? i <= exp : i <= exp * (-1); i++)
-    {
-        result *= b;
-    }
-
-    return exp > 0 ? result : 1 / result;
-}
-
-Console.WriteLine("To The Power Of: \n");
-Console.WriteLine(ToThePowerOf(10, 0)); // 1
-Console.WriteLine(ToThePowerOf(5, -2)); // 0.04
-Console.WriteLine(ToThePowerOf(8, -8)); // 5.96046447753906E-08
-Console.WriteLine(ToThePowerOf(0, 5));  // 0
-Console.WriteLine("\n");
-
-//Letters Balance
-
-//Given a string, write a method that checks if there are exactly the same letters on the left side and right side of the string. Assume string length is even and letters don't repeat on each side.
-//Expected input and output
-//LettersBalance("fgvgvf") → true
-//LettersBalance("lampsmpser") → false
-
-static bool LettersBalance(string word)
-{
-    bool isBalanced;
-    for (int i = 0; i < word.Length / 2; i++)
-    {
-        isBalanced = false;
-        for (int j = word.Length - 1; j >= word.Length / 2; j--)
-        {
-            if (word[i] == word[j])
-            {
-                isBalanced = true;
-            }
-        }
-
-        if (!isBalanced)
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-Console.WriteLine("Letters Balance: \n");
-Console.WriteLine(LettersBalance("kfdfdk"));           // True
-Console.WriteLine(LettersBalance("reyjer"));           // False
-Console.WriteLine(LettersBalance("wkxzcsazsckawx"));   // True
-Console.WriteLine(LettersBalance("pkmqsdedeskgqm"));   // False
-Console.WriteLine("\n");
-
-//Replace Two Words
-
-//Given a string in which two words are separated by a char, write a method that replaces these two words.
-//Expected input and output
-//ReplaceWords("abc_xyz", '_') → xyz_abc
-//ReplaceWords("trolling.master", '.') → master.trolling
-
-static string ReplaceWords(string word, char ch)
-{
-    string firstWord = string.Empty;
-    string secondWord = string.Empty;
-
-    for (int i = 0; i <= word.Length - 1; i++)
-    {
-        if (word[i] != ch)
-        {
-            secondWord += word[i];
-        }
-        else
-        {
-            for (int j = i + 1; j <= word.Length - 1; j++)
-            {
-                firstWord += word[j];
-            }
-            break;
-        }
-    }
-
-    return firstWord + ch + secondWord;
-}
-
-
-Console.WriteLine("Replace Two Words: \n");
-Console.WriteLine(ReplaceWords("dog_octopus", '_'));     // octopus_dog
-Console.WriteLine(ReplaceWords("a.b", '.'));                     // b.a
-Console.WriteLine(ReplaceWords("good very", ' '));         // very good
-Console.WriteLine("\n");
-
-//Digital Root
-
-//Given a non-negative number, write a method that returns its digital root. From Wikipedia - digital root is a value obtained by an iterative process of summing digits, on each iteration using the result from the previous iteration to compute a digit sum. The process continues until a single-digit number is reached.
-//Expected input and output
-//DigitalRoot(83) → 2
-//DigitalRoot(40002938) → 8
-
-static int DigitalRoot(uint number)
-{
-    while (number / 10 != 0)
-    {
-        uint sum = 0;
-        int i = 10;
-        int j = 1;
-
-        while (number / j >= 1)
-        {
-            sum += (uint)(number % i / j);
-
-            i *= 10;
-            j *= 10;
-        }
-
-        number = sum;
-    }
-
-    return (int)number;
-}
-
-Console.WriteLine("Digital Root: \n");
-Console.WriteLine(DigitalRoot(5));          // 5
-Console.WriteLine(DigitalRoot(1029584739)); // 3
-Console.WriteLine(DigitalRoot(99999999));   // 9
-Console.WriteLine("\n");
-
-//Check Brackets Sequence
-
-//Given a sequence of brackets, write a method that checks if it has the same number of opening and closing brackets.
-//Expected input and output
-//CheckBracketsSequence("((()))") → true
-//CheckBracketsSequence("()(())(") → false
-//CheckBracketsSequence(")") → false
-
-static bool CheckBracketsSequence(string sequence)
-{
-    int check = 0;
-
-    for (int i = 0; i < sequence.Length; i++)
-    {
-        check = sequence[i] == '(' ? ++check : --check;
-    }
-
-    return check == 0;
-}
-
-Console.WriteLine("Check Brackets Sequence: \n");
-Console.WriteLine(CheckBracketsSequence("((()()()))"));           // True
-Console.WriteLine(CheckBracketsSequence(")"));                    // False
-Console.WriteLine(CheckBracketsSequence(")(())("));               // True
-Console.WriteLine(CheckBracketsSequence("()())()"));              // False
-Console.WriteLine(CheckBracketsSequence("((()(((()())))())())")); // True
-Console.WriteLine("\n");
-
-//Add Separator
-
-//Given a string and a separator, write a method that adds separator between each adjacent characters in a string.
-//Expected input and output
-//AddSeparator("ABCD", "^") → "A^B^C^D^"
-//AddSeparator("chocolate", "-") → "c-h-o-c-o-l-a-t-e"
-
-static string AddSeparator(string word, string separator)
-{
-    string separatedWord = string.Empty;
-
-    for (int i = 0; i < word.Length; i++)
-    {
-        separatedWord += i < word.Length - 1 ? word[i] + separator : word[i].ToString();
-    }
-
-    return separatedWord;
-}
-
-Console.WriteLine("Add Separator: \n");
-Console.WriteLine(AddSeparator("computer", "_"));  // c_o_m_p_u_t_e_r
-Console.WriteLine(AddSeparator("$*(#", " "));       // $ * ( #
-Console.WriteLine(AddSeparator("AC", "B"));        // ABC
-Console.WriteLine(AddSeparator("octopus", "X"));   // oXcXtXoXpXuXs
-Console.WriteLine("\n");
-
-//Is Palindrome
-
-//Given a string, write a method that checks if it is a palindrome (is read the same backward as forward). Assume that string may consist only of lower-case letters.
-//Expected input and output
-//IsPalindrome("eye") → true
-//IsPalindrome("home") → false
-
-static bool IsPalindrome(string str)
-{
-    for (int i = 0; i < str.Length / 2; i++)
-    {
-        if (str[i] != str[str.Length - 1 - i])
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-Console.WriteLine("Is Palindrome: \n");
-Console.WriteLine(IsPalindrome("madam"));  // True
-Console.WriteLine(IsPalindrome("123454321"));  // True
-Console.WriteLine(IsPalindrome("apple"));  // False
-Console.WriteLine(IsPalindrome("Never Odd Or Even"));  // True
-Console.WriteLine(IsPalindrome("Curabitur vel est diam"));  // False
-Console.WriteLine(IsPalindrome("x"));  // True
-Console.WriteLine("\n");
-
-//Length Of String
-
-//Given a string, write a method that returns its length. Do not use library methods!
-//Expected input and output
-//LengthOfAString("computer") → 8
-//LengthOfAString("ice cream") → 9
-
-static int LengthOfAString(string str)
-{
-    int length = 0;
-    foreach (char c in str)
-    {
-        length++;
-    }
-
-    return length;
-}
-
-Console.WriteLine("Length Of String: \n");
-Console.WriteLine(LengthOfAString("Lorem ipsum dolor sit amet")); //26
-Console.WriteLine(LengthOfAString(string.Empty));                 //0
-Console.WriteLine(LengthOfAString("conse12ctetur "));             //14
-Console.WriteLine("\n");
-
-//String In Reverse Order
-
-//Given a string, write a method that returns that string in reverse order.
-//Expected input and output
-//StringInReverseOrder("qwerty") → "ytrewq"
-//StringInReverseOrder("oe93 kr") → "rk 39eo"
-
-static string StringInReverseOrder(string str)
-{
-    string reverseString = string.Empty;
-    for (int i = str.Length - 1; i >= 0; i--)
-    {
-        reverseString += str[i];
-    }
-
-    return reverseString;
-}
-
-Console.WriteLine("String In Reverse Order: \n");
-Console.WriteLine(StringInReverseOrder("Vivamus commodo quam at purus "));  //  surup ta mauq odommoc sumaviV
-Console.WriteLine(StringInReverseOrder("34 ( 9  9@*"));  // *@9  9 ( 43
-Console.WriteLine(StringInReverseOrder("malesuada"));  // adauselam
-Console.WriteLine("\n");
-
-//Sum Digits In String
-
-//Given a string, write a method which returns sum of all digits in that string. Assume that string contains only single digits.
-//Expected input and output
-//SumDigitsInString("1q2w3e") → 6
-//SumDigitsInString("L0r3m.1p5um") → 9
-//SumDigitsInString("") → 0
-
-static int SumDigitsInString(string str)
-{
-    var sum = 0;
-
-    for (var i = 0; i < str.Length; i++)
-    {
-        if (char.IsDigit(str[i]))
-        {
-            sum += (int)char.GetNumericValue(str[i]);
-        }
-    }
-
-    return sum;
-}
-
-Console.WriteLine("Sum Digits In String: \n");
-Console.WriteLine(SumDigitsInString("aaa5aa5aa5a5a")); // 20
-Console.WriteLine(SumDigitsInString("10r3m1p5um")); // 10
-Console.WriteLine(SumDigitsInString("tt")); //0
-Console.WriteLine("\n");
-
-//Make Uppercase
-
-//Given a string, write a method that returns new string in which every odd letter of the word is uppercase. String may consist of one or more words.
-//Expected input and output
-//MakeUppercase("modem") → "MoDeM"
-//MakeUppercase("BookWorm") → "BoOkWoRm"
-//MakeUppercase("Aliquam dolor nisl?") → "AlIqUaM DoLoR NiSl?"
-
-static string MakeUppercase(string word)
-{
-    int letterIndex = 0;
-    string uppercaseWord = string.Empty;
-
-    for (int i = 0; i < word.Length; i++)
-    {
-        if (word[i] >= 'a' && word[i] <= 'z' && letterIndex % 2 == 0)
-        {
-            letterIndex++;
-            uppercaseWord += (char)(word[i] - 32);
-        }
-        else if (word[i] != ' ')
-        {
-            letterIndex++;
-            uppercaseWord += word[i];
-        }
-        else
-        {
-            letterIndex = 0;
-            uppercaseWord += word[i];
-        }
-    }
-    return uppercaseWord;
-}
-
-Console.WriteLine("Make Uppercase: \n");
-Console.WriteLine(MakeUppercase("very short sentence."));   // VeRy ShOrT SeNtEnCe.
-Console.WriteLine(MakeUppercase("motorcycle"));             // MoToRcYcLe
-Console.WriteLine(MakeUppercase("Events And Delegates"));   // EvEnTs AnD DeLeGaTeS
-Console.WriteLine("\n");
 
 //Mix Two Strings
 
