@@ -70,61 +70,19 @@ DrawHourglass.HourGlassDrawing();
 
 DrawParallelogram.ParallelogramDrawing();
 
-//Draw Christmas Tree
+DrawCristmasTree.ChristmasTreeDrawing();
 
-//Write a method that draws Christmas tree shape like below.
-//Expected input and output
-//DrawChristmasTree() →
-//   *
-//  ***
-// *****
-//*******
-//   *
-//  ***
-// *****
-//*******
-//   *
-//  ***
-// *****
-//*******
 
-static void DrawChristmasTree()
-{
-    for (var i = 0; i < 3; i++)
-    {
-        for (var j = 0; j < 7; j += 2)
-        {
-            for (var k = 0; k < (7 - j) / 2; k++)
-            {
-                Console.Write(" ");
-            }
-            for (var m = 0; m <= j; m++)
-            {
-                Console.Write("*");
-            }
-            for (var n = (7 - j) / 2; n < 7; n++)
-            {
-                Console.Write(" ");
-            }
-            Console.WriteLine();
-        }
-    }
-}
+    //Extract String
 
-Console.WriteLine("Draw Christmas Tree: \n");
-DrawChristmasTree();
-Console.WriteLine("\n");
+    //Given a string, write a method that returns substring from between two double hash signs (#).
+    //Expected input and output
+    //ExtractString("##abc##def") → "abc"
+    //ExtractString("12####78") → empty string
+    //ExtractString("gar##d#en") → empty string
+    //ExtractString("++##--##++") → "--"
 
-//Extract String
-
-//Given a string, write a method that returns substring from between two double hash signs (#).
-//Expected input and output
-//ExtractString("##abc##def") → "abc"
-//ExtractString("12####78") → empty string
-//ExtractString("gar##d#en") → empty string
-//ExtractString("++##--##++") → "--"
-
-static string ExtractString(string word)
+    static string ExtractString(string word)
 {
     string extractedWord = string.Empty;
 
