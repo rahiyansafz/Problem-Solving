@@ -6,7 +6,6 @@ public static class AddSeparator
     //Expected input and output
     //AddSeparator("ABCD", "^") → "A^B^C^D^"
     //AddSeparator("chocolate", "-") → "c-h-o-c-o-l-a-t-e"
-
     public static string Separator(string word, string separator)
     {
         string separatedWord = string.Empty;

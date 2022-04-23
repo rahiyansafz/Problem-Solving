@@ -6,6 +6,5 @@ public static class AbsoluteValue
     //Expected input and output
     //AbsoluteValue(6832) → 6832
     //AbsoluteValue(-392) → 392
-
     public static int Absolute(int number) => number >= 0 ? number : number * -1;
 }
