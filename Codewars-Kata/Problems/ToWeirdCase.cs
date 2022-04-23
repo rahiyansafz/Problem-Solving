@@ -1,30 +1,40 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace Codewars_Kata.Problems;
 
 internal class ToWeirdCase
 {
-    //Take the following IPv4 address: 128.32.10.1
+    //WeIrD StRiNg CaSe
+    //Write a function toWeirdCase(weirdcase in Ruby) that accepts a string, and returns the same string with all even indexed characters in each word upper cased, and all odd indexed characters in each word lower cased.The indexing just explained is zero based, so the zero-ith index is even, therefore that character should be upper cased and you need to start over for each word.
 
-    //This address has 4 octets where each octet is a single byte (or 8 bits).
+    //The passed in string will only consist of alphabetical characters and spaces(' '). Spaces will only be present if there are multiple words.Words will be separated by a single space(' ').
 
-    //    1st octet 128 has the binary representation: 10000000
-    //    2nd octet 32 has the binary representation: 00100000
-    //    3rd octet 10 has the binary representation: 00001010
-    //    4th octet 1 has the binary representation: 00000001
+    //Examples:
+    //toWeirdCase( "String" );//=> returns "StRiNg"
+    //toWeirdCase( "Weird string case" );//=> returns "WeIrD StRiNg CaSe"
 
-    //So 128.32.10.1 == 10000000.00100000.00001010.00000001
+    public static string Solution(string s)
+    {
+        return string.Join(" ",
+      s.Split(' ')
+      .Select(w => string.Concat(
+        w.Select((ch, i) => i % 2 == 0 ? char.ToUpper(ch) : char.ToLower(ch)
+      ))));
+    }
 
-    //Because the above IP address has 32 bits, we can represent it as the unsigned 32 bit number: 2149583361
+    //public static string ToWeirdCase(string s)
+    //{
+    //    char[] r = new char[s.Length];
 
-    //Complete the function that takes an unsigned 32 bit number and returns a string representation of its IPv4 address.
-    //Examples
+    //    for (int i = 0, x = 0; i < s.Length; i++, x++)
+    //    {
+    //        x = (s[i] == ' ') ? -1 : x;
+    //        r[i] = ((x % 2) == 0) ? Char.ToUpper(s[i]) : Char.ToLower(s[i]);
+    //    }
 
-    //2149583361 ==> "128.32.10.1"
-    //32         ==> "0.0.0.32"
-    //0          ==> "0.0.0.0"
-    public static string UInt32ToIP(uint ip) => $"{IPAddress.Parse($"{ip}")}"; // => IPAddress.Parse(ip.ToString()).ToString();
-
+    //    return new string(r);
+    //}
 }
