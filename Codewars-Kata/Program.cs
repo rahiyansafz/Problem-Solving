@@ -2,5 +2,3 @@
 using Codewars_Kata.Problems;
 
 Console.WriteLine("Codewars Kata");
-
-ToWeirdCase.ToWeirdCaseCP("Weird string case");
