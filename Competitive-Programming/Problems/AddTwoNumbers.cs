@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Competitive_Programming.Problems;
+namespace Random_Problems.Problems;
 
 public static class AddTwoNumbers
 {

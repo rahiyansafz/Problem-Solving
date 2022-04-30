@@ -1,4 +1,4 @@
-﻿namespace Competitive_Programming.Problems.Recursion;
+﻿namespace Random_Problems.Problems.Recursion;
 
 public static class StringInReverseOrderRecursion
 {

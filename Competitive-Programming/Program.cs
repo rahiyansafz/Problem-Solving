@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Competitive_Programming.Problems;
-using Competitive_Programming.Problems.Recursion;
+using Random_Problems.Problems;
+using Random_Problems.Problems.Recursion;
 
 AddTwoNumbers.AddAndMultiply(1.7, 9.9, 0.01);
 

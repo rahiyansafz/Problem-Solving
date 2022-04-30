@@ -1,4 +1,4 @@
-﻿namespace Competitive_Programming.Problems;
+﻿namespace Random_Problems.Problems;
 
 public static class ReturnEvenNumbers
 {

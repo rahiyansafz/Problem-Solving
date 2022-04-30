@@ -1,4 +1,4 @@
-﻿namespace Competitive_Programming.Problems;
+﻿namespace Codewars_Kata.Problems;
 
 internal class CountingDuplicateNumbers
 {
