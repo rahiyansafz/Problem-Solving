@@ -66,9 +66,7 @@ static class ClimbingTheLeaderBoardOne
         for (int j = 1; j < playerScoresWithRepeats.Length; j++)
         {
             if (playerScoresWithRepeats[j] < playerScores[k])
-            {
                 playerScores[++k] = playerScoresWithRepeats[j];
-            }
         }
 
         var totalLevelsToPlay = int.Parse(Console.ReadLine()!);
@@ -98,8 +96,6 @@ static class ClimbingTheLeaderBoardOne
         }
         totalLevelsToPlay--;
         Console.WriteLine(currentRoundRank);
-
-
 
         while (totalLevelsToPlay > 0)
         {

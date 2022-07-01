@@ -21,9 +21,8 @@ public class Solution
     }
 }
 
-
 /// <summary>
-/// Solution 1: Brute force method
+/// Solution 2: Brute force method
 /// Complexity: O(n^2)
 /// </summary>
 public class Solution2
@@ -48,7 +47,6 @@ public class Solution2
     }
 }
 
-
 /// <summary>
 /// Optimized solution
 /// Complexity: O(n)
@@ -60,12 +58,10 @@ public class Solution3
         //For fast retrival
         Hashtable hashtable = new();
         hashtable[nums[0]] = 0; //hashtable["key"] = value;
-
         for (int i = 1; i < nums.Length; i++)
         {
             // difference or complement
             int diff = target - nums[i];
-
             // if this complement present in the list 
             // return the index of the difference and current number
             if (hashtable.Contains(diff))
@@ -73,7 +69,6 @@ public class Solution3
             else
                 hashtable[nums[i]] = i;
         }
-
         return null;
     }
 }
