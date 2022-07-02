@@ -51,7 +51,9 @@ public class Solution
     {
         int valu = l1 + l2 + Convert.ToInt16(remainder);
         if (valu > 9)
+        {
             remainder = true; valu -= 10;
+        }
         else remainder = false;
         var valAndrem = (valu: valu, remainder: remainder);
         return valAndrem;
